@@ -1,4 +1,4 @@
-const assetPattern = /P1468742269_A6799243858_en_subtitles_V\d+-\.webvtt/;
+const assetPattern = /(?:P1468742269|P1477111467)_A6799243858_en_subtitles_V\d+-\.webvtt/;
 
 try {
   const requestUrl = $request.url;
