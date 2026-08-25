@@ -5,15 +5,10 @@ const hostMap = {
 
 function rewriteHlsUrl(value) {
   if (typeof value !== "string") return value;
-  try {
-    const url = new URL(value);
-    const replacement = hostMap[url.hostname];
-    if (!replacement) return value;
-    url.hostname = replacement;
-    return url.toString();
-  } catch (_) {
-    return value;
-  }
+  const match = value.match(/^(https?:\/\/)([^\/?#]+)([\s\S]*)$/i);
+  if (!match) return value;
+  const replacement = hostMap[match[2].toLowerCase()];
+  return replacement ? `${match[1]}${replacement}${match[3]}` : value;
 }
 
 function rewrite(value) {

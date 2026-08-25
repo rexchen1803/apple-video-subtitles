@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕（F1 + 影片）
-desc: v260822A；F1 26 赛季前10站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
+desc: v260825b；F1 26 赛季前10站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
 
 http:
   mitm:
@@ -35,31 +35,31 @@ http:
       name: f1-race-commentary-fan-zh
       type: response
       require-body: true
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6799243858(?:&.*)?$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6799243858(?:&.*)?$'
       name: movie-the-martian-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6799243858[^#]*martianzh=1[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6799243858[^#]*martianzh=1[^#]*$'
       name: movie-the-martian-playlist
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1468742269_A6799243858_en_subtitles_V\d+-\.webvtt\?[^#]*martianzh=1[^#]*$'
+    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+(?:P1468742269|P1477111467)_A6799243858_en_subtitles_V\d+-\.webvtt\?[^#]*martianzh=1[^#]*$'
       name: movie-the-martian-vtt
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6793326577(?:&.*)?$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6793326577(?:&.*)?$'
       name: movie-mi4-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793326577[^#]*mi4zhadd=1[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793326577[^#]*mi4zhadd=1[^#]*$'
       name: movie-mi4-playlist
       type: response
       require-body: true
@@ -71,13 +71,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:a=6793332306|mainAssetAdamId=6793332306))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:a=6793332306|mainAssetAdamId=6793332306))[^#]*$'
       name: movie-titanic-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793332306[^#]*titaniczh=1[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793332306[^#]*titaniczh=1[^#]*$'
       name: movie-titanic-playlist
       type: response
       require-body: true
@@ -89,13 +89,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6792938265(?:&.*)?$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6792938265(?:&.*)?$'
       name: movie-gone-girl-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6792938265[^#]*gonegirlzh=1[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6792938265[^#]*gonegirlzh=1[^#]*$'
       name: movie-gone-girl-playlist
       type: response
       require-body: true
@@ -114,13 +114,13 @@ http:
       timeout: 30
       max-size: 2097152
 
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793683930|a=[^#]*6793683930))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793683930|a=[^#]*6793683930))[^#]*$'
       name: movie-looper-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*mainAssetAdamId=6793683930)(?=[^#]*looperzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*mainAssetAdamId=6793683930)(?=[^#]*looperzh=1)[^#]*$'
       name: movie-looper-playlist
       type: response
       require-body: true
@@ -132,13 +132,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))[^#]*$'
       name: movie-bourne-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))(?=[^#]*bournezh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))(?=[^#]*bournezh=1)[^#]*$'
       name: movie-bourne-playlist
       type: response
       require-body: true
@@ -150,13 +150,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))[^#]*$'
       name: movie-sixth-sense-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))(?=[^#]*sixthsensezh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))(?=[^#]*sixthsensezh=1)[^#]*$'
       name: movie-sixth-sense-playlist
       type: response
       require-body: true
@@ -168,13 +168,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))[^#]*$'
       name: movie-et-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))(?=[^#]*etzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))(?=[^#]*etzh=1)[^#]*$'
       name: movie-et-playlist
       type: response
       require-body: true
@@ -186,13 +186,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793693246|a=[^#]*6793693246))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793693246|a=[^#]*6793693246))[^#]*$'
       name: movie-arrival-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793693246|a=[^#]*6793693246))(?=[^#]*arrivalzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793693246|a=[^#]*6793693246))(?=[^#]*arrivalzh=1)[^#]*$'
       name: movie-arrival-playlist
       type: response
       require-body: true
@@ -204,13 +204,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))[^#]*$'
       name: movie-zodiac-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))(?=[^#]*zodiaczh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))(?=[^#]*zodiaczh=1)[^#]*$'
       name: movie-zodiac-playlist
       type: response
       require-body: true
@@ -222,13 +222,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))[^#]*$'
       name: movie-i-robot-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))(?=[^#]*irobotzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))(?=[^#]*irobotzh=1)[^#]*$'
       name: movie-i-robot-playlist
       type: response
       require-body: true
@@ -240,13 +240,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))[^#]*$'
       name: movie-the-proposal-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))(?=[^#]*proposalzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))(?=[^#]*proposalzh=1)[^#]*$'
       name: movie-the-proposal-playlist
       type: response
       require-body: true
@@ -258,13 +258,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))[^#]*$'
       name: movie-rookie-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))(?=[^#]*rookiezh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))(?=[^#]*rookiezh=1)[^#]*$'
       name: movie-rookie-playlist
       type: response
       require-body: true
@@ -276,13 +276,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))[^#]*$'
       name: movie-forgetting-sarah-marshall-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))(?=[^#]*sarahzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))(?=[^#]*sarahzh=1)[^#]*$'
       name: movie-forgetting-sarah-marshall-playlist
       type: response
       require-body: true
@@ -294,13 +294,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))[^#]*$'
       name: movie-aviator-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))(?=[^#]*aviatorzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))(?=[^#]*aviatorzh=1)[^#]*$'
       name: movie-aviator-playlist
       type: response
       require-body: true
@@ -312,13 +312,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))[^#]*$'
       name: movie-21-jump-street-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))(?=[^#]*jumpstreetzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))(?=[^#]*jumpstreetzh=1)[^#]*$'
       name: movie-21-jump-street-playlist
       type: response
       require-body: true
@@ -330,13 +330,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))[^#]*$'
       name: movie-charlies-angels-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))(?=[^#]*charliesangelszh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))(?=[^#]*charliesangelszh=1)[^#]*$'
       name: movie-charlies-angels-playlist
       type: response
       require-body: true
@@ -348,13 +348,13 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))[^#]*$'
       name: movie-zoolander-manifest
       type: response
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play-edge(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))(?=[^#]*zoolanderzh=1)[^#]*$'
+    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))(?=[^#]*zoolanderzh=1)[^#]*$'
       name: movie-zoolander-playlist
       type: response
       require-body: true
@@ -369,7 +369,7 @@ http:
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/apple-tv/restore_apple_tv_playback_hosts.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/apple-tv/restore_apple_tv_playback_hosts.js
     interval: 86400
   f1-subtitle-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
@@ -384,10 +384,10 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-the-martian-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
     interval: 86400
   movie-the-martian-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-mi4-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
