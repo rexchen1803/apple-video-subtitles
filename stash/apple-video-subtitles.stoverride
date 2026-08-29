@@ -375,10 +375,10 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/2026-f1-race-commentary-fan-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/2026-f1-race-commentary-fan-zh.js
     interval: 86400
   movie-the-martian-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
@@ -543,5 +543,5 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2001-zoolander/serve_zoolander_zh_hans_added_track.js
     interval: 86400
   movie-interstellar-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
     interval: 86400
