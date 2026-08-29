@@ -1,5 +1,5 @@
 #!name=Apple TV 中文字幕（F1 + 影片）
-#!desc=v260825b；F1 26 赛季前10站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
+#!desc=v260829a；F1 26 赛季前11站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
 
 [MITM]
 hostname = %APPEND% hls-amt.itunes.apple.com, uts-api.itunes.apple.com, vod-ap-amt.tv.apple.com, vod-fa-amt.tv.apple.com, vod-ak-amt.tv.apple.com
@@ -17,6 +17,7 @@ F1.Replay.07-barcelona-catalunya.Chinese.response = type=http-response,pattern=^
 F1.Replay.08-austrian.Chinese.response = type=http-response,pattern=^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+P1429344944_A1882150267_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$,requires-body=1,max-size=2097152,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-formal-v9-f1-08-austrian.js
 F1.Replay.09-british.Chinese.response = type=http-response,pattern=^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+P1436852938_A1881739464_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$,requires-body=1,max-size=2097152,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-formal-v9-f1-09-british.js
 F1.Replay.10-belgian.Chinese.response = type=http-response,pattern=^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+P1457248952_A1881786635_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$,requires-body=1,max-size=2097152,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-formal-v9-f1-10-belgian.js
+F1.Replay.11-hungarian.Chinese.response = type=http-response,pattern=^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+P1461869625_A1881700068_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$,requires-body=1,max-size=2097152,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-formal-v9-f1-11-hungarian.js
 
 AppleTV.Movie.ETExtraTerrestrial.SafeBridgeFull.Master.request = type=http-request,pattern=^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1982-et-the-extra-terrestrial\/index\.m3u8(?:\?.*)?$,requires-body=0,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-safe-full-v15-master-1982-et-the-extra-terrestrial.js
 AppleTV.Movie.ETExtraTerrestrial.SafeBridgeFull.Playlist.request = type=http-request,pattern=^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1982-et-the-extra-terrestrial\/index\.m3u8(?:\?.*)?$,requires-body=0,timeout=30,script-path=https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/payloads/surge-v260825b/surge-safe-full-v15-playlist-1982-et-the-extra-terrestrial.js

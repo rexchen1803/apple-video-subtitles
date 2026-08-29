@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕（F1 + 影片）
-desc: v260825b；F1 26 赛季前10站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
+desc: v260829a；F1 26 赛季前11站正赛回放中文字幕；Apple TV 18 部电影简中字幕（不含《美丽心灵》）；使用需开启 MITM 并安装和信任证书。
 
 http:
   mitm:
@@ -27,7 +27,7 @@ http:
       name: f1-subtitle-manifest
       type: response
       require-body: true
-    - match: '^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+(?:P1337486392_A1881724926|P1337522687_A1881777941|P1326620577_A1881763666|P1364568578_A1881733891|P1392837560_A1881753363|P1411825097_A1881742204|P1413846083_A1881690171|P1429344944_A1882150267|P1436852938_A1881739464|P1457248952_A1881786635)_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$'
+    - match: '^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+(?:P1337486392_A1881724926|P1337522687_A1881777941|P1326620577_A1881763666|P1364568578_A1881733891|P1392837560_A1881753363|P1411825097_A1881742204|P1413846083_A1881690171|P1429344944_A1882150267|P1436852938_A1881739464|P1457248952_A1881786635|P1461869625_A1881700068)_en_subtitles_V2-\d+\.webvtt(?:\?.*)?$'
       name: f1-race-commentary-zh
       type: response
       require-body: true
@@ -375,10 +375,10 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/2026-f1-race-commentary-fan-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/2026-f1-race-commentary-fan-zh.js
     interval: 86400
   movie-the-martian-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
@@ -543,5 +543,5 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2001-zoolander/serve_zoolander_zh_hans_added_track.js
     interval: 86400
   movie-interstellar-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/250da20002662ce7d8fa64abc94099b61b4695d1/payloads/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
     interval: 86400
