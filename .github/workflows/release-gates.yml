@@ -1,0 +1,36 @@
+name: Release gates
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  release-diff:
+    name: release-diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - run: node scripts/verify-release-diff.mjs
+
+  module-framework:
+    name: module-framework
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - run: node scripts/verify-module-framework.mjs --network
+
+  f1-payload-runtime:
+    name: f1-payload-runtime
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: node scripts/verify-f1-payload-runtime.mjs
