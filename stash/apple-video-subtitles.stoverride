@@ -375,7 +375,7 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/739a884d7413439057cb6a28089242628a7baf47/payloads/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/36250aa6f5e52e5be74c6ccbf6fca32610560adb/payloads/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/2026-f1-race-commentary-fan-zh.js
