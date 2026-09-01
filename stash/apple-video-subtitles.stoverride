@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v260901a；F1 26 赛季前12站正赛回放中文字幕和 Apple TV 18 部会员电影中文字幕；使用需开启 MITM 并安装和信任证书；GitHub：rexchen1803。
+desc: v260901b；F1 26 赛季前12站正赛回放中文字幕和 Apple TV 18 部会员电影中文字幕；使用需开启 MITM 并安装和信任证书；GitHub：rexchen1803。
 
 http:
   mitm:
@@ -372,7 +372,7 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/apple-tv/restore_apple_tv_playback_hosts.js
     interval: 86400
   f1-subtitle-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
     interval: 86400
   f1-race-commentary-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/36250aa6f5e52e5be74c6ccbf6fca32610560adb/payloads/2026-f1-race-commentary-zh.js
@@ -381,7 +381,7 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/2026-f1-race-commentary-fan-zh.js
     interval: 86400
   movie-the-martian-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-the-martian-playlist:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
@@ -390,31 +390,31 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-mi4-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
     interval: 86400
   movie-mi4-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2011-mission-impossible-ghost-protocol/rewrite_mi4_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/rewrite_mi4_added_track_playlist.js
     interval: 86400
   movie-mi4-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2011-mission-impossible-ghost-protocol/serve_mi4_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/serve_mi4_zh_hans_added_track.js
     interval: 86400
   movie-titanic-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757/payloads/movies/1997-titanic/inject_titanic_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/inject_titanic_zh_hans_added_track.js
     interval: 86400
   movie-titanic-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757/payloads/movies/1997-titanic/rewrite_titanic_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/rewrite_titanic_added_track_playlist.js
     interval: 86400
   movie-titanic-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757/payloads/movies/1997-titanic/serve_titanic_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/serve_titanic_zh_hans_added_track.js
     interval: 86400
   movie-gone-girl-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2014-gone-girl/inject_gone_girl_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/inject_gone_girl_zh_hans_added_track.js
     interval: 86400
   movie-gone-girl-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2014-gone-girl/rewrite_gone_girl_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/rewrite_gone_girl_added_track_playlist.js
     interval: 86400
   movie-gone-girl-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3f/payloads/movies/2014-gone-girl/serve_gone_girl_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/serve_gone_girl_zh_hans_added_track.js
     interval: 86400
   movie-looper-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-looper/inject_looper_zh_hans_added_track.js
