@@ -115,17 +115,29 @@ check(races && JSON.stringify(Object.keys(races).sort()) === JSON.stringify(surg
 
 const urls = [...new Set(Object.values(modules).flatMap(rawUrls))];
 check(urls.length > 0, "public raw URLs were extracted");
-if (network && errors.length === 0) {
+const rawUrlPattern = /^https:\/\/raw\.githubusercontent\.com\/rexchen1803\/apple-video-subtitles\/([0-9a-f]{40})\/(payloads\/[A-Za-z0-9._/-]+)$/i;
+const pinnedUrls = new Map();
+for (const url of urls) {
+  const match = url.match(rawUrlPattern);
+  check(Boolean(match), `public script URL uses the expected repository, a full 40-character commit SHA, and a payloads path: ${url}`);
+  if (!match) continue;
+  const payloadPath = match[2];
+  check(!payloadPath.includes("..") && fs.existsSync(payloadPath), `pinned payload exists in current tree: ${payloadPath}`);
+  pinnedUrls.set(url, payloadPath);
+}
+
+if (network) {
   let cursor = 0;
   async function worker() {
     while (cursor < urls.length) {
       const url = urls[cursor++];
+      const payloadPath = pinnedUrls.get(url);
+      if (!payloadPath || !fs.existsSync(payloadPath)) continue;
       try {
         const response = await fetch(url, { redirect: "follow" });
         check(response.ok, `network ${response.status}: ${url}`);
-        const match = url.match(/^https:\/\/raw\.githubusercontent\.com\/rexchen1803\/apple-video-subtitles\/[0-9a-f]{40}\/(payloads\/[^?]+)$/i);
-        if (response.ok && match && fs.existsSync(match[1])) {
-          check(await response.text() === read(match[1]), `pinned payload matches current tree: ${match[1]}`);
+        if (response.ok) {
+          check(await response.text() === read(payloadPath), `pinned payload matches current tree: ${payloadPath}`);
         }
       } catch {
         check(false, `network request failed: ${url}`);
