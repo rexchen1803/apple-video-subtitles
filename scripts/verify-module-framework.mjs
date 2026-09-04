@@ -126,6 +126,28 @@ for (const url of urls) {
   pinnedUrls.set(url, payloadPath);
 }
 
+const moviePayloadGroups = new Map();
+for (const payloadPath of pinnedUrls.values()) {
+  if (!/^payloads\/movies(?:-[^/]+)?\/.+\/(?:inject|rewrite|serve)_.+\.js$/.test(payloadPath)) continue;
+  const directory = payloadPath.slice(0, payloadPath.lastIndexOf("/"));
+  const paths = moviePayloadGroups.get(directory) ?? [];
+  paths.push(payloadPath);
+  moviePayloadGroups.set(directory, paths);
+}
+for (const [directory, payloadPaths] of moviePayloadGroups) {
+  const markerKeys = payloadPaths.flatMap((payloadPath) =>
+    [...read(payloadPath).matchAll(/const markerKey = "([A-Za-z0-9_-]+)"/g)].map((match) => match[1]),
+  );
+  if (!markerKeys.length) continue;
+  const uniqueMarkerKeys = [...new Set(markerKeys)];
+  check(payloadPaths.length === 3, `${directory}: movie payload closure has Manifest, Playlist, and VTT scripts`);
+  check(uniqueMarkerKeys.length === 1 && markerKeys.length === 3, `${directory}: three payload scripts use one markerKey`);
+  if (uniqueMarkerKeys.length !== 1) continue;
+  const marker = `${uniqueMarkerKeys[0]}=1`;
+  check(occurrences(modules.stash, marker) === 2, `${directory}: stash Playlist and VTT rules match payload marker ${marker}`);
+  check(occurrences(modules.shadowrocket, marker) === 2, `${directory}: shadowrocket Playlist and VTT rules match payload marker ${marker}`);
+}
+
 if (network) {
   let cursor = 0;
   async function worker() {

@@ -1,5 +1,5 @@
 #!name=Apple TV 中文字幕
-#!desc=v260904a；F1 26 赛季前12站正赛回放中文字幕和 Apple TV 33 部会员电影中文字幕；使用需开启 MITM 并安装和信任证书；GitHub：rexchen1803。
+#!desc=v260904b；F1 26 赛季前12站正赛回放中文字幕和 Apple TV 33 部会员电影中文字幕；使用需开启 MITM 并安装和信任证书；GitHub：rexchen1803。
 
 [MITM]
 hostname = %APPEND% hls-amt.itunes.apple.com, uts-api.itunes.apple.com, vod-ap-amt.tv.apple.com, vod-fa-amt.tv.apple.com, vod-ak-amt.tv.apple.com
