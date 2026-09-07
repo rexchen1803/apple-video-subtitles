@@ -16,7 +16,7 @@
 
 ## 安装方法
 
-> 重要：确保在 Surge、Stash 或 Shadowrocket 中开启 **MITM** 功能，并安装、信任根证书。
+> 重要：确保在 Surge、Stash、Shadowrocket 或 Quantumult X 中开启 **MITM** 功能，并安装、信任根证书。
 
 在对应的代理工具中下载相应模块；已安装旧版模块无法正常更新的用户，可先删除旧模块，再添加下方地址，避免重复改写同一请求。
 
@@ -38,6 +38,12 @@ https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/stash/a
 
 ```text
 https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/shadowrocket/apple-video-subtitles.module
+```
+
+### Quantumult X（重写）
+
+```text
+https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/quantumultx/apple-video-subtitles.snippet
 ```
 
 ---
