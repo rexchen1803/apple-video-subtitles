@@ -639,314 +639,314 @@ http:
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/apple-tv/restore_apple_tv_playback_hosts.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/runtime/movies/restore_apple_tv_playback_hosts.js
     interval: 86400
   f1-subtitle-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/runtime/f1/DualSubs-Universal-v1.7.5.Manifest.response.bundle.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/36250aa6f5e52e5be74c6ccbf6fca32610560adb/payloads/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/2026-f1-race-commentary-fan-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/f1/2026/2026-f1-race-commentary-fan-zh.js
     interval: 86400
   movie-the-martian-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-the-martian-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
     interval: 86400
   movie-the-martian-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2c99b0742c8e5468d3fa81f2342259e5b736ad73/payloads/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
     interval: 86400
   movie-mi4-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
     interval: 86400
   movie-mi4-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/rewrite_mi4_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2011-mission-impossible-ghost-protocol/rewrite_mi4_added_track_playlist.js
     interval: 86400
   movie-mi4-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2011-mission-impossible-ghost-protocol/serve_mi4_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2011-mission-impossible-ghost-protocol/serve_mi4_zh_hans_added_track.js
     interval: 86400
   movie-titanic-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/inject_titanic_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1997-titanic/inject_titanic_zh_hans_added_track.js
     interval: 86400
   movie-titanic-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/rewrite_titanic_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1997-titanic/rewrite_titanic_added_track_playlist.js
     interval: 86400
   movie-titanic-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/e0a8757e6c240cb9299e13697ebc80a78893c288/payloads/movies/1997-titanic/serve_titanic_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1997-titanic/serve_titanic_zh_hans_added_track.js
     interval: 86400
   movie-gone-girl-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/inject_gone_girl_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2014-gone-girl/inject_gone_girl_zh_hans_added_track.js
     interval: 86400
   movie-gone-girl-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/rewrite_gone_girl_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2014-gone-girl/rewrite_gone_girl_added_track_playlist.js
     interval: 86400
   movie-gone-girl-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/8118f3fd1f5721cd2f12b6eaea36355f128ab56e/payloads/movies/2014-gone-girl/serve_gone_girl_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2014-gone-girl/serve_gone_girl_zh_hans_added_track.js
     interval: 86400
   movie-looper-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-looper/inject_looper_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-looper/inject_looper_zh_hans_added_track.js
     interval: 86400
   movie-looper-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-looper/rewrite_looper_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-looper/rewrite_looper_added_track_playlist.js
     interval: 86400
   movie-looper-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-looper/serve_looper_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-looper/serve_looper_zh_hans_added_track.js
     interval: 86400
   movie-bourne-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-bourne-identity/inject_bourne_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-bourne-identity/inject_bourne_zh_hans_added_track.js
     interval: 86400
   movie-bourne-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-bourne-identity/rewrite_bourne_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-bourne-identity/rewrite_bourne_added_track_playlist.js
     interval: 86400
   movie-bourne-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-bourne-identity/serve_bourne_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-bourne-identity/serve_bourne_zh_hans_added_track.js
     interval: 86400
   movie-sixth-sense-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1999-the-sixth-sense/inject_sixth_sense_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1999-the-sixth-sense/inject_sixth_sense_zh_hans_added_track.js
     interval: 86400
   movie-sixth-sense-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1999-the-sixth-sense/rewrite_sixth_sense_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1999-the-sixth-sense/rewrite_sixth_sense_added_track_playlist.js
     interval: 86400
   movie-sixth-sense-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1999-the-sixth-sense/serve_sixth_sense_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1999-the-sixth-sense/serve_sixth_sense_zh_hans_added_track.js
     interval: 86400
   movie-et-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1982-et-the-extra-terrestrial/inject_et_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1982-et-the-extra-terrestrial/inject_et_zh_hans_added_track.js
     interval: 86400
   movie-et-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1982-et-the-extra-terrestrial/rewrite_et_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1982-et-the-extra-terrestrial/rewrite_et_added_track_playlist.js
     interval: 86400
   movie-et-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/1982-et-the-extra-terrestrial/serve_et_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1982-et-the-extra-terrestrial/serve_et_zh_hans_added_track.js
     interval: 86400
   movie-arrival-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2016-arrival/inject_arrival_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2016-arrival/inject_arrival_zh_hans_added_track.js
     interval: 86400
   movie-arrival-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2016-arrival/rewrite_arrival_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2016-arrival/rewrite_arrival_added_track_playlist.js
     interval: 86400
   movie-arrival-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2016-arrival/serve_arrival_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2016-arrival/serve_arrival_zh_hans_added_track.js
     interval: 86400
   movie-zodiac-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2007-zodiac/inject_zodiac_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-zodiac/inject_zodiac_zh_hans_added_track.js
     interval: 86400
   movie-zodiac-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2007-zodiac/rewrite_zodiac_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-zodiac/rewrite_zodiac_added_track_playlist.js
     interval: 86400
   movie-zodiac-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2007-zodiac/serve_zodiac_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-zodiac/serve_zodiac_zh_hans_added_track.js
     interval: 86400
   movie-i-robot-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-i-robot/inject_i_robot_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-i-robot/inject_i_robot_zh_hans_added_track.js
     interval: 86400
   movie-i-robot-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-i-robot/rewrite_i_robot_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-i-robot/rewrite_i_robot_added_track_playlist.js
     interval: 86400
   movie-i-robot-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-i-robot/serve_i_robot_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-i-robot/serve_i_robot_zh_hans_added_track.js
     interval: 86400
   movie-the-proposal-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2009-the-proposal/inject_the_proposal_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-proposal/inject_the_proposal_zh_hans_added_track.js
     interval: 86400
   movie-the-proposal-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2009-the-proposal/rewrite_the_proposal_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-proposal/rewrite_the_proposal_added_track_playlist.js
     interval: 86400
   movie-the-proposal-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2009-the-proposal/serve_the_proposal_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-proposal/serve_the_proposal_zh_hans_added_track.js
     interval: 86400
   movie-rookie-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-rookie/inject_the_rookie_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-rookie/inject_the_rookie_zh_hans_added_track.js
     interval: 86400
   movie-rookie-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-rookie/rewrite_the_rookie_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-rookie/rewrite_the_rookie_added_track_playlist.js
     interval: 86400
   movie-rookie-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2002-the-rookie/serve_the_rookie_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2002-the-rookie/serve_the_rookie_zh_hans_added_track.js
     interval: 86400
   movie-forgetting-sarah-marshall-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2008-forgetting-sarah-marshall/inject_forgetting_sarah_marshall_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-forgetting-sarah-marshall/inject_forgetting_sarah_marshall_zh_hans_added_track.js
     interval: 86400
   movie-forgetting-sarah-marshall-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2008-forgetting-sarah-marshall/rewrite_forgetting_sarah_marshall_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-forgetting-sarah-marshall/rewrite_forgetting_sarah_marshall_added_track_playlist.js
     interval: 86400
   movie-forgetting-sarah-marshall-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2008-forgetting-sarah-marshall/serve_forgetting_sarah_marshall_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-forgetting-sarah-marshall/serve_forgetting_sarah_marshall_zh_hans_added_track.js
     interval: 86400
   movie-aviator-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-the-aviator/inject_aviator_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-the-aviator/inject_aviator_zh_hans_added_track.js
     interval: 86400
   movie-aviator-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-the-aviator/rewrite_aviator_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-the-aviator/rewrite_aviator_added_track_playlist.js
     interval: 86400
   movie-aviator-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2004-the-aviator/serve_aviator_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-the-aviator/serve_aviator_zh_hans_added_track.js
     interval: 86400
   movie-21-jump-street-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-21-jump-street/inject_21_jump_street_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-21-jump-street/inject_21_jump_street_zh_hans_added_track.js
     interval: 86400
   movie-21-jump-street-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-21-jump-street/rewrite_21_jump_street_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-21-jump-street/rewrite_21_jump_street_added_track_playlist.js
     interval: 86400
   movie-21-jump-street-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2012-21-jump-street/serve_21_jump_street_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-21-jump-street/serve_21_jump_street_zh_hans_added_track.js
     interval: 86400
   movie-charlies-angels-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2000-charlies-angels/inject_charlies_angels_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2000-charlies-angels/inject_charlies_angels_zh_hans_added_track.js
     interval: 86400
   movie-charlies-angels-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2000-charlies-angels/rewrite_charlies_angels_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2000-charlies-angels/rewrite_charlies_angels_added_track_playlist.js
     interval: 86400
   movie-charlies-angels-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2000-charlies-angels/serve_charlies_angels_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2000-charlies-angels/serve_charlies_angels_zh_hans_added_track.js
     interval: 86400
   movie-zoolander-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2001-zoolander/inject_zoolander_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2001-zoolander/inject_zoolander_zh_hans_added_track.js
     interval: 86400
   movie-zoolander-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2001-zoolander/rewrite_zoolander_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2001-zoolander/rewrite_zoolander_added_track_playlist.js
     interval: 86400
   movie-zoolander-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/d9b1ac0fa8eed8c0a90afa6b492b25e175a6602d/payloads/movies/2001-zoolander/serve_zoolander_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2001-zoolander/serve_zoolander_zh_hans_added_track.js
     interval: 86400
   movie-interstellar-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/c98c80ef64a60b1a68687967ef43294aca290490/payloads/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
     interval: 86400
   movie-the-wolf-of-wall-street-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-the-wolf-of-wall-street/inject_the_wolf_of_wall_street_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-the-wolf-of-wall-street/inject_the_wolf_of_wall_street_zh_hans_added_track.js
     interval: 86400
   movie-the-wolf-of-wall-street-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-the-wolf-of-wall-street/rewrite_the_wolf_of_wall_street_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-the-wolf-of-wall-street/rewrite_the_wolf_of_wall_street_added_track_playlist.js
     interval: 86400
   movie-the-wolf-of-wall-street-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-the-wolf-of-wall-street/serve_the_wolf_of_wall_street_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-the-wolf-of-wall-street/serve_the_wolf_of_wall_street_zh_hans_added_track.js
     interval: 86400
   movie-her-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-her/inject_her_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-her/inject_her_zh_hans_added_track.js
     interval: 86400
   movie-her-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-her/rewrite_her_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-her/rewrite_her_added_track_playlist.js
     interval: 86400
   movie-her-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2013-her/serve_her_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2013-her/serve_her_zh_hans_added_track.js
     interval: 86400
   movie-the-social-network-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-the-social-network/inject_the_social_network_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-the-social-network/inject_the_social_network_zh_hans_added_track.js
     interval: 86400
   movie-the-social-network-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-the-social-network/rewrite_the_social_network_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-the-social-network/rewrite_the_social_network_added_track_playlist.js
     interval: 86400
   movie-the-social-network-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-the-social-network/serve_the_social_network_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-the-social-network/serve_the_social_network_zh_hans_added_track.js
     interval: 86400
   movie-master-and-commander-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-master-and-commander/inject_master_and_commander_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-master-and-commander/inject_master_and_commander_zh_hans_added_track.js
     interval: 86400
   movie-master-and-commander-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-master-and-commander/rewrite_master_and_commander_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-master-and-commander/rewrite_master_and_commander_added_track_playlist.js
     interval: 86400
   movie-master-and-commander-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-master-and-commander/serve_master_and_commander_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-master-and-commander/serve_master_and_commander_zh_hans_added_track.js
     interval: 86400
   movie-zero-dark-thirty-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2012-zero-dark-thirty/inject_zero_dark_thirty_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-zero-dark-thirty/inject_zero_dark_thirty_zh_hans_added_track.js
     interval: 86400
   movie-zero-dark-thirty-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2012-zero-dark-thirty/rewrite_zero_dark_thirty_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-zero-dark-thirty/rewrite_zero_dark_thirty_added_track_playlist.js
     interval: 86400
   movie-zero-dark-thirty-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2012-zero-dark-thirty/serve_zero_dark_thirty_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2012-zero-dark-thirty/serve_zero_dark_thirty_zh_hans_added_track.js
     interval: 86400
   movie-school-of-rock-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-school-of-rock/inject_school_of_rock_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-school-of-rock/inject_school_of_rock_zh_hans_added_track.js
     interval: 86400
   movie-school-of-rock-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-school-of-rock/rewrite_school_of_rock_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-school-of-rock/rewrite_school_of_rock_added_track_playlist.js
     interval: 86400
   movie-school-of-rock-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2003-school-of-rock/serve_school_of_rock_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2003-school-of-rock/serve_school_of_rock_zh_hans_added_track.js
     interval: 86400
   movie-ferris-buellers-day-off-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1986-ferris-buellers-day-off/inject_ferris_buellers_day_off_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1986-ferris-buellers-day-off/inject_ferris_buellers_day_off_zh_hans_added_track.js
     interval: 86400
   movie-ferris-buellers-day-off-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1986-ferris-buellers-day-off/rewrite_ferris_buellers_day_off_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1986-ferris-buellers-day-off/rewrite_ferris_buellers_day_off_added_track_playlist.js
     interval: 86400
   movie-ferris-buellers-day-off-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1986-ferris-buellers-day-off/serve_ferris_buellers_day_off_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1986-ferris-buellers-day-off/serve_ferris_buellers_day_off_zh_hans_added_track.js
     interval: 86400
   movie-superbad-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2007-superbad/inject_superbad_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-superbad/inject_superbad_zh_hans_added_track.js
     interval: 86400
   movie-superbad-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2007-superbad/rewrite_superbad_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-superbad/rewrite_superbad_added_track_playlist.js
     interval: 86400
   movie-superbad-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2007-superbad/serve_superbad_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2007-superbad/serve_superbad_zh_hans_added_track.js
     interval: 86400
   movie-a-league-of-their-own-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1992-a-league-of-their-own/inject_a_league_of_their_own_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1992-a-league-of-their-own/inject_a_league_of_their_own_zh_hans_added_track.js
     interval: 86400
   movie-a-league-of-their-own-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1992-a-league-of-their-own/rewrite_a_league_of_their_own_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1992-a-league-of-their-own/rewrite_a_league_of_their_own_added_track_playlist.js
     interval: 86400
   movie-a-league-of-their-own-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/1992-a-league-of-their-own/serve_a_league_of_their_own_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/1992-a-league-of-their-own/serve_a_league_of_their_own_zh_hans_added_track.js
     interval: 86400
   movie-troy-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2004-troy/inject_troy_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-troy/inject_troy_zh_hans_added_track.js
     interval: 86400
   movie-troy-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2004-troy/rewrite_troy_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-troy/rewrite_troy_added_track_playlist.js
     interval: 86400
   movie-troy-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2004-troy/serve_troy_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2004-troy/serve_troy_zh_hans_added_track.js
     interval: 86400
   movie-war-of-the-worlds-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2005-war-of-the-worlds/inject_war_of_the_worlds_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2005-war-of-the-worlds/inject_war_of_the_worlds_zh_hans_added_track.js
     interval: 86400
   movie-war-of-the-worlds-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2005-war-of-the-worlds/rewrite_war_of_the_worlds_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2005-war-of-the-worlds/rewrite_war_of_the_worlds_added_track_playlist.js
     interval: 86400
   movie-war-of-the-worlds-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2005-war-of-the-worlds/serve_war_of_the_worlds_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2005-war-of-the-worlds/serve_war_of_the_worlds_zh_hans_added_track.js
     interval: 86400
   movie-mamma-mia-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-mamma-mia/inject_mamma_mia_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-mamma-mia/inject_mamma_mia_zh_hans_added_track.js
     interval: 86400
   movie-mamma-mia-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-mamma-mia/rewrite_mamma_mia_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-mamma-mia/rewrite_mamma_mia_added_track_playlist.js
     interval: 86400
   movie-mamma-mia-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-mamma-mia/serve_mamma_mia_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-mamma-mia/serve_mamma_mia_zh_hans_added_track.js
     interval: 86400
   movie-easy-a-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-easy-a/inject_easy_a_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-easy-a/inject_easy_a_zh_hans_added_track.js
     interval: 86400
   movie-easy-a-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-easy-a/rewrite_easy_a_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-easy-a/rewrite_easy_a_added_track_playlist.js
     interval: 86400
   movie-easy-a-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2010-easy-a/serve_easy_a_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2010-easy-a/serve_easy_a_zh_hans_added_track.js
     interval: 86400
   movie-definitely-maybe-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-definitely-maybe/inject_definitely_maybe_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-definitely-maybe/inject_definitely_maybe_zh_hans_added_track.js
     interval: 86400
   movie-definitely-maybe-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-definitely-maybe/rewrite_definitely_maybe_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-definitely-maybe/rewrite_definitely_maybe_added_track_playlist.js
     interval: 86400
   movie-definitely-maybe-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2008-definitely-maybe/serve_definitely_maybe_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2008-definitely-maybe/serve_definitely_maybe_zh_hans_added_track.js
     interval: 86400
   movie-the-informant-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2009-the-informant/inject_the_informant_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-informant/inject_the_informant_zh_hans_added_track.js
     interval: 86400
   movie-the-informant-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2009-the-informant/rewrite_the_informant_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-informant/rewrite_the_informant_added_track_playlist.js
     interval: 86400
   movie-the-informant-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/446a9e023261d5da6240e125dcf7fbb23fe90292/payloads/movies-v260904a/2009-the-informant/serve_the_informant_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b38f3d9564505f1a4b907c181c9309fae7ed89ba/payloads/stash/movies/2009-the-informant/serve_the_informant_zh_hans_added_track.js
     interval: 86400
