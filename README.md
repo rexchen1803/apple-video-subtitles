@@ -2,31 +2,23 @@
 
 内容收录：
 
-- F1 26 赛季澳大利亚至荷兰站，共 12 场完整正赛回放。
-- Apple TV 会员电影：《泰坦尼克号》《火星救援》《第六感》《碟中谍4》等 33 部电影，暂不含《美丽心灵》。
+- F1 26 赛季澳大利亚至荷兰，12 站比赛的正赛回放，部分 30 分钟精华。
+- Apple TV 会员电影：《华尔街之狼》《她》等 33 部电影，权限以 Apple TV 实际为准。
 - Apple TV/iTunes Store 中的《星际穿越》。
 
 字幕说明：
 
-- F1 正赛回放字幕不含赛前及赛后节目，原始英文字幕替换为简体中文字幕。
-- Apple TV 会员 33 部电影新增简体中文字幕。
-- 《星际穿越》法语字幕替换为简体中文字幕。
+- F1 正赛回放字幕不含赛前赛后节目，新增简中字幕。
+- Apple TV 会员电影新增简中字幕。
+- 《星际穿越》法语替换为简中字幕。
 
 ---
 
-## 安装方法
+## 使用说明
 
-> 重要：确保在 Surge、Stash、Shadowrocket 或 Quantumult X 中开启 **MITM** 功能，并安装、信任根证书。
-
-在对应的代理工具中下载相应模块；已安装旧版模块无法正常更新的用户，可先删除旧模块，再添加下方地址，避免重复改写同一请求。
-
-以下地址用于添加模块，请点击每个代码框右上角的复制按钮。
-
-### Surge（模块）
-
-```text
-https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/surge/apple-video-subtitles.sgmodule
-```
+1. 在对应客户端中开启 MITM（HTTPS 解密）与脚本功能。
+2. 安装并信任根证书。
+3. 下载并启用对应客户端的模块。
 
 ### Stash（覆写）
 
@@ -46,13 +38,18 @@ https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/shadowr
 https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/quantumultx/apple-video-subtitles.snippet
 ```
 
+### Surge（模块）
+
+```text
+https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/surge/apple-video-subtitles.sgmodule
+```
+
 ---
 
 ## 支持与交流
 
-- 感谢使用，觉得项目不错，欢迎点赞并关注小红书：Rex Spark。
-- 如遇翻译、时间轴或显示问题，欢迎反馈。
-- 安装方法有疑问可先咨询 AI；人工支持可联系下方 Telegram 或邮箱。
-- 欢迎前往 [爱发电](https://ifdian.net/a/rexchen) 赞助或加入会员。
+- 感谢使用，喜欢项目可以星星支持
+- 如遇翻译问题，欢迎反馈帮助改进
+- 加 TG 进群获取更新通知和技术支持
 - Telegram：[@rexchen1803](https://t.me/rexchen1803)
-- 邮箱：[rexchen1129@gmail.com](mailto:rexchen1129@gmail.com)
+- 更多项目及内容可前往个人主页 [Behoss](https://www.behoss.com)
