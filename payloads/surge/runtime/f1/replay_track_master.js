@@ -23,6 +23,7 @@ const replayConfigs = {
   belgium: { programId: "1457248952", assetId: "1881786635", revision: "f1ber12m1", stableRenditionId: "belgium-2026-r12-zh-hans-m1" },
   hungary: { programId: "1461869625", assetId: "1881700068", revision: "f1hur32m1", stableRenditionId: "hungary-2026-r32-zh-hans-m1" },
   netherlands: { programId: "1478680801", assetId: "1882152939", revision: "f1ntr23m1", stableRenditionId: "netherlands-2026-r23-zh-hans-m1" },
+  spain: { programId: "1497835498", assetId: "1881721455", revision: "f1spr22m1", stableRenditionId: "spain-2026-r22-zh-hans-m1" },
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
