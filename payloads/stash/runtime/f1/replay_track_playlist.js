@@ -52,6 +52,7 @@ const replayConfigs = {
   belgium: { eventId: "P1457248952_A1881786635", programId: "1457248952", assetId: "1881786635", expectedSegments: 207 },
   hungary: { eventId: "P1461869625_A1881700068", programId: "1461869625", assetId: "1881700068", expectedSegments: 228 },
   netherlands: { eventId: "P1478680801_A1882152939", programId: "1478680801", assetId: "1882152939", expectedSegments: 254 },
+  spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
