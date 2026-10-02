@@ -42,6 +42,15 @@ function seriesBridgeUrl(value) {
   return null;
 }
 
+const shelfTargets = {"6809945696":"2003-28-days-later","6813800850":"2007-american-gangster","6809968299":"2001-black-hawk-down","6809916755":"2006-blood-diamond","6809968224":"1998-fallen","6809968703":"2014-fury","6809968396":"2010-going-the-distance","6809968982":"1997-good-will-hunting","6809969812":"2002-insomnia","6812093448":"2015-jurassic-world","6809973625":"1976-taxi-driver","6809916863":"2011-the-girl-with-the-dragon-tattoo","6809975421":"2008-tropic-thunder"};
+const shelfRevisions = {"6809945696":"shelf1002-d4548655248c-credit-v2","6813800850":"shelf1002-21ba574ddeb3-credit-v2","6809968299":"shelf1002-dcb4b0cab8cb-credit-v2","6809916755":"shelf1002-9648950795c1-credit-v2","6809968224":"shelf1002-342fb0c70442-credit-v2","6809968703":"shelf1002-d179d8ebf9f6-credit-v2","6809968396":"shelf1002-53613ec3a8fb-credit-v2","6809968982":"shelf1002-a1fdcb98a5d7-credit-v2","6809969812":"shelf1002-68f174a204e7-credit-v2","6812093448":"shelf1002-61f160f59338-credit-v2","6809973625":"shelf1002-a35439e85a3a-credit-v2","6809916863":"shelf1002-511ca230dc1a-credit-v2","6809975421":"shelf1002-fbb44dd760b6-credit-v2"};
+function shelfBridgeUrl(value) {
+  const source = nativePlaybackUrl(value);
+  if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8(?:\?[^#]*)?$/i.test(source)) return null;
+  const asset = queryValue(source, "a") || queryValue(source, "mainAssetAdamId");
+  return shelfTargets[asset] ? "https://hls-amt.itunes.apple.com/__apple_movie_master/" + shelfTargets[asset] + "/index.m3u8?rev=" + shelfRevisions[asset] + "&src=" + encodeURIComponent(source) : null;
+}
+
 function beautifulMindBridgeUrl(value) {
   const source = nativePlaybackUrl(value);
   const match = source.match(/^https:\/\/(play(?:-edge)?\.itunes\.apple\.com)(\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8)(?:\?[^#]*)?$/i);
@@ -51,6 +60,8 @@ function beautifulMindBridgeUrl(value) {
 
 function rewriteHlsUrl(value) {
   if (typeof value !== "string") return value;
+  const shelf = shelfBridgeUrl(value);
+  if (shelf) return shelf;
   const beautifulMind = beautifulMindBridgeUrl(value);
   if (beautifulMind) return beautifulMind;
   const series = seriesBridgeUrl(value);
