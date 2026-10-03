@@ -48,8 +48,8 @@ https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/main/surge/a
 
 ## 支持与交流
 
-- 感谢使用，喜欢项目可以星星支持
-- 如遇翻译问题，欢迎反馈帮助改进
-- 加 TG 进群获取更新通知和技术支持
-- Telegram：[@rexchen1803](https://t.me/rexchen1803)
-- 更多内容前往个人主页查看 [Behoss](https://www.behoss.com)
+感谢使用！喜欢项目可以点个星星支持，翻译问题或有改进建议也欢迎反馈。
+
+- X：[@rexchen1803](https://x.com/rexchen1803)
+- Telegram 交流群：[@rexchen26](https://t.me/rexchen26)
+- 个人主页：[Behoss](https://www.behoss.com)
