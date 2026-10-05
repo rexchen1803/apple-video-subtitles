@@ -88,17 +88,46 @@ function respond(status, body, type) {
   __qxDone({ response: { status, headers: { "Content-Type": type, "Cache-Control": "no-store, max-age=0" }, body } });
 }
 function queryValue(url, name) {
-  try { return new URL(url).searchParams.get(name) || ""; } catch (_) { return ""; }
+  const query = String(url || "").split("?")[1] || "";
+  for (const part of query.split("&")) {
+    const index = part.indexOf("=");
+    const key = index < 0 ? part : part.slice(0, index);
+    if (key === name) return decodeURIComponent(index < 0 ? "" : part.slice(index + 1));
+  }
+  return "";
+}
+function parseHttpUrl(value) {
+  const raw = String(value || "");
+  const match = raw.match(/^(https?):\/\/([^/?#]+)([^?#]*)(?:\?([^#]*))?(?:#.*)?$/i);
+  if (!match) return null;
+  const query = match[4] || "";
+  return {
+    protocol: match[1].toLowerCase() + ":",
+    hostname: match[2].replace(/:\d+$/, ""),
+    pathname: match[3] || "/",
+    searchParams: { get(name) {
+      for (const part of query.split("&")) {
+        if (!part) continue;
+        const index = part.indexOf("=");
+        const key = decodeURIComponent(index < 0 ? part : part.slice(0, index));
+        if (key === name) return decodeURIComponent(index < 0 ? "" : part.slice(index + 1));
+      }
+      return null;
+    } },
+    toString() { return raw; },
+  };
 }
 function route(value, path) {
   try {
-    const url = new URL(value);
+    const url = parseHttpUrl(value);
+    if (!url) return null;
     return url.protocol === "https:" && url.hostname === host && url.pathname === path && url.searchParams.get("rev") === revision ? url : null;
   } catch (_) { return null; }
 }
 function nativeSource(value) {
   try {
-    const url = new URL(value);
+    const url = parseHttpUrl(value);
+    if (!url) return null;
     const boundAsset = url.searchParams.get("a") || url.searchParams.get("mainAssetAdamId");
     if (url.protocol !== "https:" || !/^play(?:-edge)?\.itunes\.apple\.com$/i.test(url.hostname) ||
         url.pathname !== "/WebObjects/MZPlayLocal.woa/hls/subscription/playlist.m3u8" || boundAsset !== assetId) return null;
@@ -107,7 +136,8 @@ function nativeSource(value) {
 }
 function sourcePlaylist(value) {
   try {
-    const url = new URL(value);
+    const url = parseHttpUrl(value);
+    if (!url) return null;
     const boundAsset = url.searchParams.get("mainAssetAdamId") || url.searchParams.get("a");
     if (url.protocol !== "https:" || !/^play(?:-edge)?\.itunes\.apple\.com$/i.test(url.hostname) ||
         url.pathname !== "/WebObjects/MZPlayLocal.woa/hls/subscription/stream/playlist.m3u8" || boundAsset !== assetId) return null;
@@ -115,7 +145,21 @@ function sourcePlaylist(value) {
   } catch (_) { return null; }
 }
 function absoluteUrl(value, base) {
-  try { return new URL(value, base).toString(); } catch (_) { return value; }
+  value = nativePlaybackUrl(value);
+  base = nativePlaybackUrl(base);
+  if (/^https?:\/\//i.test(value)) return value;
+  const origin = String(base || "").match(/^(https?:\/\/[^/]+)/i);
+  if (!origin) return value;
+  if (value.startsWith("/")) return origin[1] + value;
+  const sourcePath = String(base).replace(/^https?:\/\/[^/]+/i, "").split("?")[0];
+  const directory = sourcePath.slice(0, sourcePath.lastIndexOf("/") + 1);
+  const normalized = [];
+  for (const part of (directory + value).split("/")) {
+    if (!part || part === ".") continue;
+    if (part === "..") normalized.pop();
+    else normalized.push(part);
+  }
+  return origin[1] + "/" + normalized.join("/");
 }
 function attribute(line, name) {
   const match = line.match(new RegExp("(?:^|,)" + name + "=[^,]*"));

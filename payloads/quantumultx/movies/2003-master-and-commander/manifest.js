@@ -91,9 +91,12 @@ function injectTrack(body, sourceUrl) {
     output = setAttribute(output, "ASSOC-LANGUAGE", "zh", true);
     output = setAttribute(output, "STABLE-RENDITION-ID", stableRenditionId, true);
     output = setAttribute(output, "URI", playlistBridgeBase + encodeURIComponent(sourcePlaylist), true);
+    output = output.replace(/,CHARACTERISTICS=(?:"[^"]*"|[^,]*)/g, "");
     return output;
   });
-  lines.splice(lines.indexOf(baseRows.at(-1)) + 1, 0, ...chineseRows);
+  const firstSubtitleRow = lines.findIndex((line) => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES"));
+  if (firstSubtitleRow < 0) return null;
+  lines.splice(firstSubtitleRow, 0, ...chineseRows);
   return lines.map((line) => {
     if (!line) return line;
     if (!line.startsWith("#")) return absoluteUrl(line, sourceUrl);

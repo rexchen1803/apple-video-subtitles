@@ -39,6 +39,12 @@ function absoluteUrl(value, baseUrl) {
   return originMatch[1] + "/" + normalized.join("/");
 }
 
+function validMasterFeatureSource(value) {
+  const raw=String(value||"");if(raw.slice(0,8).toLowerCase()!=="https://")return false;
+  const rest=raw.slice(8),slash=rest.indexOf("/");if(slash<0)return false;
+  const host=rest.slice(0,slash).toLowerCase(),p=rest.slice(slash).split("?")[0],file=p.slice(p.lastIndexOf("/")+1);
+  return ["vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com","vod-ak-aoc.tv.apple.com"].includes(host)&&["P1478615099_A6804923769_en_subtitles_V2-.webvtt","P1485810495_A6804923769_en_subtitles_V2-.webvtt"].includes(file);
+}
 function upstreamHeaders() {
   const output = {};
   const headers = $request.headers || {};
@@ -69,7 +75,7 @@ if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sour
     const candidates = sourceLines
       .filter((line) => line && !line.startsWith("#"))
       .map((line) => absoluteUrl(line, sourceUrl))
-      .filter((line) => line.includes("_A" + movieAssetId + "_") && /\.webvtt(?:[?#]|$)/i.test(line) && !/(?:pre|post|empty)/i.test(line));
+      .filter((line) => validMasterFeatureSource(line));
     if (candidates.length !== 1) {
       fail(502, "Unexpected subtitle playlist shape");
       return;
