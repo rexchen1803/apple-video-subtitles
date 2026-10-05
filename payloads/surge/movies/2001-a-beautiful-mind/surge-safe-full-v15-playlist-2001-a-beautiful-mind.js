@@ -12,7 +12,7 @@ const fallback = [
   "#EXTINF:31.208,", "seg-2.webvtt", "#EXT-X-DISCONTINUITY",
   "#EXTINF:4.18,", "seg-3.webvtt", "#EXT-X-DISCONTINUITY",
   "#EXTINF:8112.82,", "seg-4.webvtt", "#EXT-X-ENDLIST", "",
-].map((line) => line.startsWith("seg-") ? `${prefix}${line}?rev=v260925a` : line).join("\n");
+].map((line) => line.startsWith("seg-") ? `${prefix}${line}?rev=v260925a&segments=5` : line).join("\n");
 let source;
 try {
   const routeUrl = new URL($request.url);
@@ -39,16 +39,20 @@ if (source) {
     }
     const lines = data.replace(/\r/g, "").split("\n");
     const segments = lines.filter((line) => line && !line.startsWith("#"));
-    if (lines[0] !== "#EXTM3U" || segments.length !== 5 ||
-        lines.filter((line) => line === "#EXT-X-DISCONTINUITY").length !== 4 ||
-        lines.filter((line) => line.startsWith("#EXTINF:")).length !== 5 ||
-        !lines.includes("#EXT-X-ENDLIST")) {
+    const count = segments.length;
+    const expected = count === 4 ? [8.126, 29.629, 4.18, 8112.82] : count === 5 ? [8.126, 7.198, 31.208, 4.18, 8112.82] : null;
+    const durations = lines.filter((line) => line.startsWith("#EXTINF:")).map((line) => Number(line.slice(8).split(",")[0]));
+    if (!expected || lines[0] !== "#EXTM3U" ||
+        lines.filter((line) => line === "#EXT-X-DISCONTINUITY").length !== count - 1 ||
+        durations.length !== count || durations.some((value, index) => !Number.isFinite(value) || Math.abs(value - expected[index]) > 0.001) ||
+        !lines.includes("#EXT-X-TARGETDURATION:8113") || !lines.includes("#EXT-X-PLAYLIST-TYPE:VOD") ||
+        !lines.includes("#EXT-X-ENDLIST") || lines.some((line) => line.startsWith("#EXT-X-BYTERANGE:"))) {
       respond(502, "Unexpected subtitle segmentation", "text/plain; charset=utf-8");
       return;
     }
     let index = 0;
     const body = lines.map((line) => line && !line.startsWith("#") ?
-      `${prefix}seg-${index++}.webvtt?rev=v260925a` : line).join("\n");
+      `${prefix}seg-${index++}.webvtt?rev=v260925a&segments=${count}` : line).join("\n");
     respond(200, body, "application/vnd.apple.mpegurl");
   });
 }

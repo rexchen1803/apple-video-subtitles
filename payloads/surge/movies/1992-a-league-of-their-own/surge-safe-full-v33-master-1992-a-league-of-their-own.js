@@ -17,7 +17,7 @@ function nativePlaybackUrl(value) {
 function absoluteUrl(value, baseUrl) {
   value = nativePlaybackUrl(value);
   baseUrl = nativePlaybackUrl(baseUrl);
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   const originMatch = baseUrl.match(/^(https?:\/\/[^/]+)/i);
   if (!originMatch) return value;
   if (value.startsWith("/")) return originMatch[1] + value;
@@ -78,7 +78,7 @@ function injectTrack(body, sourceUrl) {
   const chineseRows = baseRows.map((line) => {
     const sourcePlaylist = absoluteUrl(quotedAttribute(line, "URI"), sourceUrl);
     if (!sourcePlaylist) return null;
-    let output = setAttribute(line, "LANGUAGE", "zh-Hans", true);
+    let output = setAttribute(line.replace(/,CHARACTERISTICS=(?:"[^\"]*"|[^,]*)/g, ""), "LANGUAGE", "zh-Hans", true);
     output = setAttribute(output, "NAME", "简体中文", true);
     output = setAttribute(output, "DEFAULT", "NO");
     output = setAttribute(output, "AUTOSELECT", "YES");
@@ -87,7 +87,7 @@ function injectTrack(body, sourceUrl) {
     output = setAttribute(output, "URI", playlistBridgeBase + encodeURIComponent(sourcePlaylist), true);
     return output;
   });
-  lines.splice(lines.indexOf(baseRows.at(-1)) + 1, 0, ...chineseRows);
+  lines.splice(lines.findIndex(line => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES")), 0, ...chineseRows);
   return lines.map((line) => {
     if (!line) return line;
     if (!line.startsWith("#")) return absoluteUrl(line, sourceUrl);

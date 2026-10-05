@@ -40,7 +40,7 @@ const URL = class {
 const revision = "v260925a";
 const playlistPath = "/__apple_movie_zh/2001-a-beautiful-mind/index.m3u8";
 const segmentPrefix = "/__apple_movie_zh/2001-a-beautiful-mind/seg-";
-const fallback = "#EXTM3U\n#EXT-X-VERSION:7\n#EXT-X-TARGETDURATION:8113\n#EXT-X-PLAYLIST-TYPE:VOD\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:8.126,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-0.webvtt?rev=v260925a\n#EXT-X-DISCONTINUITY\n#EXTINF:7.198,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-1.webvtt?rev=v260925a\n#EXT-X-DISCONTINUITY\n#EXTINF:31.208,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-2.webvtt?rev=v260925a\n#EXT-X-DISCONTINUITY\n#EXTINF:4.18,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-3.webvtt?rev=v260925a\n#EXT-X-DISCONTINUITY\n#EXTINF:8112.82,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-4.webvtt?rev=v260925a\n#EXT-X-ENDLIST\n";
+const fallback = "#EXTM3U\n#EXT-X-VERSION:7\n#EXT-X-TARGETDURATION:8113\n#EXT-X-PLAYLIST-TYPE:VOD\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:8.126,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-0.webvtt?rev=v260925a&segments=5\n#EXT-X-DISCONTINUITY\n#EXTINF:7.198,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-1.webvtt?rev=v260925a&segments=5\n#EXT-X-DISCONTINUITY\n#EXTINF:31.208,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-2.webvtt?rev=v260925a&segments=5\n#EXT-X-DISCONTINUITY\n#EXTINF:4.18,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-3.webvtt?rev=v260925a&segments=5\n#EXT-X-DISCONTINUITY\n#EXTINF:8112.82,\nhttps://hls-amt.itunes.apple.com/__apple_movie_zh/2001-a-beautiful-mind/seg-4.webvtt?rev=v260925a&segments=5\n#EXT-X-ENDLIST\n";
 function respond(status, body, type) {
   $done({ response: { status, headers: { "Content-Type": type, "Cache-Control": "no-store, max-age=0", "Pragma": "no-cache", "Expires": "0" }, body } });
 }
@@ -68,15 +68,19 @@ function upstreamHeaders() {
 }
 function rewritePlaylist(data, source) {
   if (typeof data !== "string") return null;
-  const lines = data.replace(/\r/g, "").split("\n");
+  const lines = data.replace(new RegExp(String.fromCharCode(13), "g"), "").split(String.fromCharCode(10));
   const segments = lines.filter((line) => line && !line.startsWith("#"));
-  if (lines[0] !== "#EXTM3U" || segments.length !== 5 ||
-      lines.filter((line) => line === "#EXT-X-DISCONTINUITY").length !== 4 ||
-      lines.filter((line) => line.startsWith("#EXTINF:")).length !== 5 ||
-      !lines.includes("#EXT-X-ENDLIST")) return null;
+  const count = segments.length;
+  const expected = count === 4 ? [8.126, 29.629, 4.18, 8112.82] : count === 5 ? [8.126, 7.198, 31.208, 4.18, 8112.82] : null;
+  const durations = lines.filter((line) => line.startsWith("#EXTINF:")).map((line) => Number(line.slice(8).split(",")[0]));
+  if (!expected || lines[0] !== "#EXTM3U" ||
+      lines.filter((line) => line === "#EXT-X-DISCONTINUITY").length !== count - 1 ||
+      durations.length !== count || durations.some((value, index) => !Number.isFinite(value) || Math.abs(value - expected[index]) > 0.001) ||
+      !lines.includes("#EXT-X-TARGETDURATION:8113") || !lines.includes("#EXT-X-PLAYLIST-TYPE:VOD") ||
+      !lines.includes("#EXT-X-ENDLIST") || lines.some((line) => line.startsWith("#EXT-X-BYTERANGE:"))) return null;
   let index = 0;
   return lines.map((line) => line && !line.startsWith("#") ?
-    "https://hls-amt.itunes.apple.com" + segmentPrefix + index++ + ".webvtt?rev=" + revision : line).join("\n");
+    "https://hls-amt.itunes.apple.com" + segmentPrefix + index++ + ".webvtt?rev=" + revision + "&segments=" + count : line).join(String.fromCharCode(10));
 }
 const request = requestUrl($request.url);
 if (!request) {
