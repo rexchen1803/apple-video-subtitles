@@ -3,7 +3,17 @@ const markerKey = "m1514zhp1";
 const url = $request.url || "";
 const marked = new RegExp("[?&]" + markerKey + "=1(?:&|$)").test(url);
 const target = new RegExp("(?:[?&](?:mainAssetAdamId|a)=[^&#]*" + assetId + "(?:[&#]|$)|_A" + assetId + "_)").test(url);
-const resourceTarget = url.includes("_A" + assetId + "_") && /\.webvtt(?:[?#]|$)/i.test(url) && !/(?:pre|post|empty)/i.test(url);
+function isAllowedNativeDonorUrl(value) {
+  try {
+    const raw = String(value || "");
+    const match = raw.match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
+    if (!match || ["vod-ap-aoc.tv.apple.com", "vod-fa-aoc.tv.apple.com", "vod-ak-aoc.tv.apple.com"].indexOf(match[1].toLowerCase()) < 0) return false;
+    const filename = decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1));
+    return ["P1478609383_A6803646767_es-419_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
+  } catch (_) { return false; }
+}
+
+const resourceTarget = isAllowedNativeDonorUrl(url);
 if (!marked || !target || !resourceTarget) {
   $done({});
 } else {

@@ -17,7 +17,7 @@ function nativePlaybackUrl(value) {
 function absoluteUrl(value, baseUrl) {
   value = nativePlaybackUrl(value);
   baseUrl = nativePlaybackUrl(baseUrl);
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   const originMatch = baseUrl.match(/^(https?:\/\/[^/]+)/i);
   if (!originMatch) return value;
   if (value.startsWith("/")) return originMatch[1] + value;
