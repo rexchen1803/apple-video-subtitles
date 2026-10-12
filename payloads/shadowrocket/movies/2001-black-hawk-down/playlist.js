@@ -33,6 +33,16 @@ function absoluteUrl(value, baseUrl) {
   return originMatch[1] + "/" + normalized.join("/");
 }
 
+function isAllowedNativeDonorUrl(value) {
+  try {
+    const raw = String(value || "");
+    const match = raw.match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
+    if (!match || ["vod-ap-aoc.tv.apple.com", "vod-fa-aoc.tv.apple.com", "vod-ak-aoc.tv.apple.com"].indexOf(match[1].toLowerCase()) < 0) return false;
+    const filename = decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1));
+    return ["P1503156811_A6809968299_en_subtitles_V2-.webvtt","P1518877757_A6809968299_en_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
+  } catch (_) { return false; }
+}
+
 function upstreamHeaders() {
   const output = {};
   const headers = $request.headers || {};
@@ -63,7 +73,7 @@ if (queryValue($request.url, "rev") !== "shelf1002-dcb4b0cab8cb-credit-v2" || !/
     const candidates = sourceLines
       .filter((line) => line && !line.startsWith("#"))
       .map((line) => absoluteUrl(line, sourceUrl))
-      .filter((line) => line.includes("P1503156811_A6809968299_") && /\.webvtt(?:[?#]|$)/i.test(line) && !/(?:pre|post|empty)/i.test(line));
+      .filter((line) => isAllowedNativeDonorUrl(line));
     if (candidates.length !== 1) {
       fail(502, "Unexpected subtitle playlist shape");
       return;

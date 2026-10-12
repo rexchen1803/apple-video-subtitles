@@ -145,6 +145,7 @@ function sourcePlaylist(value) {
   } catch (_) { return null; }
 }
 function absoluteUrl(value, base) {
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   value = nativePlaybackUrl(value);
   base = nativePlaybackUrl(base);
   if (/^https?:\/\//i.test(value)) return value;

@@ -75,6 +75,7 @@ function sourcePlaylist(value) {
   } catch (_) { return null; }
 }
 function absoluteUrl(value, base) {
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   try { return new URL(value, base).toString(); } catch (_) { return value; }
 }
 function attribute(line, name) {
