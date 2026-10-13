@@ -14,15 +14,19 @@ const replayConfigs = {
   hungary: { eventId: "P1461869625_A1881700068", programId: "1461869625", assetId: "1881700068", expectedSegments: 228 },
   netherlands: { eventId: "P1478680801_A1882152939", programId: "1478680801", assetId: "1882152939", expectedSegments: 254 },
   spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
+  azerbaijan: { eventId: "P1509835184_A1882094604", programId: "1509835184", assetId: "1882094604", expectedSegments: 225, revision: "azr1-76f792623176" },
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
 
 function requestConfig(value) {
   try {
-    const match = new URL(value).pathname.match(new RegExp(`^/__f1_replay_zh/(${replaySlugPattern})/index\\.m3u8$`));
+    const url = new URL(value);
+    const match = url.pathname.match(new RegExp(`^/__f1_replay_zh/(${replaySlugPattern})/index\\.m3u8$`));
     if (!match) return null;
-    return { slug: match[1], ...replayConfigs[match[1]] };
+    const config = replayConfigs[match[1]];
+    if (match[1] === "azerbaijan" && (url.hostname.toLowerCase() !== "hls-amt.itunes.apple.com" || url.searchParams.get("rev") !== config.revision)) return null;
+    return { slug: match[1], ...config };
   } catch (_) { return null; }
 }
 
