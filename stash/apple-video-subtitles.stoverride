@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261012a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261013a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -218,17 +218,17 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_master\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain)\/index\.m3u8(?:\?.*)?$'
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_master\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain|azerbaijan)\/index\.m3u8(?:\?.*)?$'
       name: f1-replay-track-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain)\/index\.m3u8(?:\?.*)?$'
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain|azerbaijan)\/index\.m3u8(?:\?.*)?$'
       name: f1-replay-track-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain)\/seg-\d{3}\.webvtt(?:\?.*)?$'
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain|azerbaijan)\/seg-\d{3}\.webvtt(?:\?.*)?$'
       name: f1-race-commentary-zh
       type: request
       require-body: false
@@ -976,16 +976,16 @@ http:
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/cfa478aa18dba4c3f2054f4c0959f6c9f3f2bbee/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
     interval: 86400
   f1-replay-track-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/runtime/f1/replay_track_master.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/cfa478aa18dba4c3f2054f4c0959f6c9f3f2bbee/payloads/stash/runtime/f1/replay_track_master.js
     interval: 86400
   f1-replay-track-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/runtime/f1/replay_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/cfa478aa18dba4c3f2054f4c0959f6c9f3f2bbee/payloads/stash/runtime/f1/replay_track_playlist.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/cfa478aa18dba4c3f2054f4c0959f6c9f3f2bbee/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/f1/2026/2026-f1-race-commentary-fan-zh.js
