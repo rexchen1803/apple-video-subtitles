@@ -54,6 +54,7 @@ const replayConfigs = {
   netherlands: { eventId: "P1478680801_A1882152939", programId: "1478680801", assetId: "1882152939", expectedSegments: 254 },
   spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
   azerbaijan: { eventId: "P1509835184_A1882094604", programId: "1509835184", assetId: "1882094604", expectedSegments: 225, revision: "azr1-76f792623176" },
+  "bahrain-malaysia": { eventId: "P1526866852_A6819360836", programId: "1526866852", assetId: "6819360836", expectedSegments: 323, revision: "bhm1-57ce7a36cff3" },
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
@@ -65,6 +66,7 @@ function requestConfig(value) {
     if (!match) return null;
     const config = replayConfigs[match[1]];
     if (match[1] === "azerbaijan" && (url.hostname.toLowerCase() !== "hls-amt.itunes.apple.com" || url.searchParams.get("rev") !== config.revision)) return null;
+    if (match[1] === "bahrain-malaysia" && (url.hostname.toLowerCase() !== "hls-amt.itunes.apple.com" || url.searchParams.get("rev") !== config.revision)) return null;
     return { slug: match[1], ...config };
   } catch (_) { return null; }
 }
@@ -128,7 +130,8 @@ function injectPlaylist(body, baseUrl, config) {
     if (eventSegmentIndex(absolute, config) === null) { output.push(absolute); continue; }
     ordinal += 1;
     if (output.at(-1)?.startsWith("#EXT-X-BYTERANGE:")) output.pop();
-    output.push(`https://hls-amt.itunes.apple.com/__f1_replay_zh/${config.slug}/seg-${String(ordinal).padStart(3, "0")}.webvtt`);
+    const revisionQuery = config.slug === "bahrain-malaysia" ? `?rev=${config.revision}` : "";
+    output.push(`https://hls-amt.itunes.apple.com/__f1_replay_zh/${config.slug}/seg-${String(ordinal).padStart(3, "0")}.webvtt${revisionQuery}`);
   }
   return ordinal === config.expectedSegments ? output.join("\n") : null;
 }

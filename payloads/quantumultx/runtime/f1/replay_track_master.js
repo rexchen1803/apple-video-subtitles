@@ -70,6 +70,7 @@ const replayConfigs = {
   netherlands: { programId: "1478680801", assetId: "1882152939", revision: "f1ntr23m1", stableRenditionId: "netherlands-2026-r23-zh-hans-m1" },
   spain: { programId: "1497835498", assetId: "1881721455", revision: "f1spr22m1", stableRenditionId: "spain-2026-r22-zh-hans-m1" },
   azerbaijan: { programId: "1509835184", assetId: "1882094604", revision: "azr1-76f792623176", stableRenditionId: "azerbaijan-2026-r1-76f792623176" },
+  "bahrain-malaysia": { programId: "1526866852", assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
@@ -81,6 +82,7 @@ function requestConfig(value) {
     if (!match) return null;
     const config = replayConfigs[match[1]];
     if (match[1] === "azerbaijan" && (url.hostname.toLowerCase() !== "hls-amt.itunes.apple.com" || url.searchParams.get("rev") !== config.revision)) return null;
+    if (match[1] === "bahrain-malaysia" && (url.hostname.toLowerCase() !== "hls-amt.itunes.apple.com" || url.searchParams.get("rev") !== config.revision)) return null;
     return { slug: match[1], ...config };
   } catch (_) { return null; }
 }
