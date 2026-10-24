@@ -61,6 +61,7 @@ const replayConfigs = {
   spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
   azerbaijan: { eventId: "P1509835184_A1882094604", programId: "1509835184", assetId: "1882094604", expectedSegments: 225, revision: "azr1-76f792623176" },
   "bahrain-malaysia": { eventId: "P1526866852_A6819360836", programId: "1526866852", assetId: "6819360836", expectedSegments: 323, revision: "bhm1-57ce7a36cff3" },
+  singapore: {"eventId":"P1525529454_A1881782888","programId":"1525529454","assetId":"1881782888","expectedSegments":229},
 };
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
