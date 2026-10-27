@@ -64,7 +64,7 @@ const replayConfigs = {
   netherlands: { programId: "1478680801", assetId: "1882152939", revision: "f1ntr23m1", stableRenditionId: "netherlands-2026-r23-zh-hans-m1" },
   spain: { programId: "1497835498", assetId: "1881721455", revision: "f1spr22m1", stableRenditionId: "spain-2026-r22-zh-hans-m1" },
   azerbaijan: { programId: "1509835184", assetId: "1882094604", revision: "azr1-76f792623176", stableRenditionId: "azerbaijan-2026-r1-76f792623176" },
-  "bahrain-malaysia": { programId: "1526866852", assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
+  "bahrain-malaysia": { programId: "1526866852", programIds: ["1526866852", "1529375473"], assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
   singapore: {"programId":"1525529454","assetId":"1881782888","revision":"20261024r7","stableRenditionId":"sg-zh-Hans-20261024r7"},
 };
 
@@ -93,7 +93,7 @@ function sourceUrl(value, config) {
       url.protocol !== "https:" ||
       !/^play(?:-edge)?\.itunes\.apple\.com$/i.test(url.hostname) ||
       url.pathname !== "/WebObjects/MZPlayLocal.woa/hls/subscription/playlist.m3u8" ||
-      url.searchParams.get("id") !== config.programId ||
+      !(config.programIds || [config.programId]).includes(url.searchParams.get("id")) ||
       url.searchParams.get("a") !== config.assetId
     ) return null;
     return url.toString();
@@ -121,12 +121,12 @@ function removeAttribute(line, name) {
   return line.replace(pattern, "");
 }
 
-function absoluteizeMaster(lines, baseUrl) {
+function absoluteizeMaster(lines, baseUrl, config) {
   return lines.map((line) => {
     if (!line) return line;
     if (!line.startsWith("#")) return absoluteUrl(line, baseUrl);
     return line.replace(/([A-Z0-9-]*URI)="([^"]+)"/g, (_, name, value) =>
-      `${name}="${absoluteUrl(value, baseUrl)}"`,
+      `${name}="${config.slug === "bahrain-malaysia" && name === "SERVER-URI" && /^data:/i.test(value) ? value : absoluteUrl(value, baseUrl)}"`,
     );
   });
 }
@@ -169,7 +169,7 @@ function injectTrack(body, baseUrl, config) {
   ) return null;
   const lines = body.replace(/\r/g, "").split("\n");
   if (lines.some((line) => line.includes(`STABLE-RENDITION-ID="${config.stableRenditionId}"`))) {
-    return absoluteizeMaster(lines, baseUrl).join("\n");
+    return absoluteizeMaster(lines, baseUrl, config).join("\n");
   }
   const groups = [...new Set(lines
     .filter((line) => line.startsWith("#EXT-X-STREAM-INF:"))
@@ -183,7 +183,7 @@ function injectTrack(body, baseUrl, config) {
   );
   if (firstSubtitle < 0) return null;
   lines.splice(firstSubtitle, 0, ...chineseRows);
-  return absoluteizeMaster(lines, baseUrl).join("\n");
+  return absoluteizeMaster(lines, baseUrl, config).join("\n");
 }
 
 function upstreamHeaders() {

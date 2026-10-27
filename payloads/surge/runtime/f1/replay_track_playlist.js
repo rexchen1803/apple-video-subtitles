@@ -15,7 +15,7 @@ const replayConfigs = {
   netherlands: { eventId: "P1478680801_A1882152939", programId: "1478680801", assetId: "1882152939", expectedSegments: 254 },
   spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
   azerbaijan: { eventId: "P1509835184_A1882094604", programId: "1509835184", assetId: "1882094604", expectedSegments: 225, revision: "azr1-76f792623176" },
-  "bahrain-malaysia": { eventId: "P1526866852_A6819360836", programId: "1526866852", assetId: "6819360836", expectedSegments: 323, revision: "bhm1-57ce7a36cff3" },
+  "bahrain-malaysia": { eventId: "P1526866852_A6819360836", programId: "1526866852", programIds: ["1526866852", "1529375473"], assetId: "6819360836", subtitleTracks: { "1526866852": "en_subtitles_V2", "1529375473": "en_subtitles_V1" }, expectedSegments: 323, revision: "bhm1-57ce7a36cff3" },
   singapore: {"eventId":"P1525529454_A1881782888","programId":"1525529454","assetId":"1881782888","expectedSegments":229},
 };
 
@@ -46,7 +46,7 @@ function sourceUrl(value, config) {
     const exactBinding =
       url.searchParams.get("a") === config.assetId &&
       url.searchParams.get("mainAssetAdamId") === config.assetId &&
-      url.searchParams.get("p") === config.programId &&
+      (config.programIds || [config.programId]).includes(url.searchParams.get("p")) &&
       /^(?:vod-ap-aoc|vod-fa-aoc|vod-ak-aoc)\.tv\.apple\.com$/i.test(url.searchParams.get("cdn") || "");
     return url.protocol === "https:" && exactSubscriptionStream && exactBinding ? url.toString() : null;
   } catch (_) { return null; }
@@ -56,10 +56,19 @@ function absoluteUrl(value, baseUrl) {
   try { return new URL(value, baseUrl).toString(); } catch (_) { return value; }
 }
 
-function eventSegmentIndex(value, config) {
+function eventSegmentIndex(value, config, baseUrl) {
   try {
     const pathname = new URL(value).pathname;
-    const match = pathname.match(new RegExp(`/${config.eventId}_en_subtitles_V\\d+-(\\d+)\\.webvtt$`));
+    let eventId = config.eventId;
+    let trackStem;
+    if (config.subtitleTracks) {
+      const programId = new URL(baseUrl).searchParams.get("p");
+      trackStem = config.subtitleTracks[programId];
+      if (!trackStem) return null;
+      eventId = `P${programId}_A${config.assetId}`;
+    }
+    const trackPattern = config.subtitleTracks ? trackStem : "en_subtitles_V\\d+";
+    const match = pathname.match(new RegExp(`/${eventId}_${trackPattern}-(\\d+)\\.webvtt$`));
     return match ? Number(match[1]) : null;
   } catch (_) { return null; }
 }
@@ -76,7 +85,7 @@ function injectPlaylist(body, baseUrl, config) {
   const targetRows = lines.flatMap((line) => {
     if (!line || line.startsWith("#")) return [];
     const absolute = absoluteUrl(line, baseUrl);
-    const segmentIndex = eventSegmentIndex(absolute, config);
+    const segmentIndex = eventSegmentIndex(absolute, config, baseUrl);
     return segmentIndex === null ? [] : [{ absolute, segmentIndex }];
   });
   if (
@@ -89,7 +98,7 @@ function injectPlaylist(body, baseUrl, config) {
     if (!line) { output.push(line); continue; }
     if (line.startsWith("#")) { output.push(absoluteizeTagUris(line, baseUrl)); continue; }
     const absolute = absoluteUrl(line, baseUrl);
-    if (eventSegmentIndex(absolute, config) === null) { output.push(absolute); continue; }
+    if (eventSegmentIndex(absolute, config, baseUrl) === null) { output.push(absolute); continue; }
     ordinal += 1;
     if (output.at(-1)?.startsWith("#EXT-X-BYTERANGE:")) output.pop();
     const revisionQuery = config.slug === "bahrain-malaysia" ? `?rev=${config.revision}` : "";

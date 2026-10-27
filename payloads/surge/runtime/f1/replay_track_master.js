@@ -25,7 +25,7 @@ const replayConfigs = {
   netherlands: { programId: "1478680801", assetId: "1882152939", revision: "f1ntr23m1", stableRenditionId: "netherlands-2026-r23-zh-hans-m1" },
   spain: { programId: "1497835498", assetId: "1881721455", revision: "f1spr22m1", stableRenditionId: "spain-2026-r22-zh-hans-m1" },
   azerbaijan: { programId: "1509835184", assetId: "1882094604", revision: "azr1-76f792623176", stableRenditionId: "azerbaijan-2026-r1-76f792623176" },
-  "bahrain-malaysia": { programId: "1526866852", assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
+  "bahrain-malaysia": { programId: "1526866852", programIds: ["1526866852", "1529375473"], assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
   singapore: {"programId":"1525529454","assetId":"1881782888","revision":"20261024r7","stableRenditionId":"sg-zh-Hans-20261024r7"},
 };
 
@@ -54,7 +54,7 @@ function sourceUrl(value, config) {
       url.protocol !== "https:" ||
       !/^play(?:-edge)?\.itunes\.apple\.com$/i.test(url.hostname) ||
       url.pathname !== "/WebObjects/MZPlayLocal.woa/hls/subscription/playlist.m3u8" ||
-      url.searchParams.get("id") !== config.programId ||
+      !(config.programIds || [config.programId]).includes(url.searchParams.get("id")) ||
       url.searchParams.get("a") !== config.assetId
     ) return null;
     return url.toString();
