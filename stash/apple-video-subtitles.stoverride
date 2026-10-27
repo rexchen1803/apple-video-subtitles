@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261024a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261027a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -976,16 +976,16 @@ http:
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a0b1bfe3a0eb5920f07941fdd4c43f23dcb7ced8/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
     interval: 86400
   f1-replay-track-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a0b1bfe3a0eb5920f07941fdd4c43f23dcb7ced8/payloads/stash/runtime/f1/replay_track_master.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_master.js
     interval: 86400
   f1-replay-track-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a0b1bfe3a0eb5920f07941fdd4c43f23dcb7ced8/payloads/stash/runtime/f1/replay_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_playlist.js
     interval: 86400
   f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a0b1bfe3a0eb5920f07941fdd4c43f23dcb7ced8/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/f1/2026/2026-f1-race-commentary-fan-zh.js
