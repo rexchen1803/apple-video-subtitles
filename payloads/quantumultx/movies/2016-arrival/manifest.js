@@ -23,7 +23,7 @@ function nativePlaybackUrl(value) {
 function absoluteUrl(value, baseUrl) {
   value = nativePlaybackUrl(value);
   baseUrl = nativePlaybackUrl(baseUrl);
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   const originMatch = baseUrl.match(/^(https?:\/\/[^/]+)/i);
   if (!originMatch) return value;
   if (value.startsWith("/")) return originMatch[1] + value;
@@ -39,23 +39,14 @@ function absoluteUrl(value, baseUrl) {
   return originMatch[1] + "/" + normalized.join("/");
 }
 
-function hasQueryFlag(value, key) {
-  const query = String(value || "").split("?")[1]?.split("#")[0] || "";
-  return query.split("&").some((part) => part === key + "=1");
+function quotedAttribute(line, name) {
+  return line.match(new RegExp(name + '="([^"]+)"'))?.[1] || null;
 }
 
-function addQueryFlag(value, key) {
-  if (hasQueryFlag(value, key)) return value;
-  const parts = String(value || "").split("#");
-  return parts[0] + (parts[0].includes("?") ? "&" : "?") + key + "=1" + (parts.length > 1 ? "#" + parts.slice(1).join("#") : "");
-}
-
-function removeQueryFlag(value, key) {
-  const parts = String(value || "").split("#");
-  const queryParts = parts[0].split("?");
-  if (queryParts.length < 2) return value;
-  const kept = queryParts.slice(1).join("?").split("&").filter((part) => part !== key + "=1");
-  return queryParts[0] + (kept.length ? "?" + kept.join("&") : "") + (parts.length > 1 ? "#" + parts.slice(1).join("#") : "");
+function setAttribute(line, name, value, quoted = false) {
+  const pattern = new RegExp(name + '=(?:"[^"]*"|[^,]*)');
+  const rendered = name + "=" + (quoted ? '"' + value + '"' : value);
+  return pattern.test(line) ? line.replace(pattern, rendered) : line + "," + rendered;
 }
 
 function upstreamHeaders() {
@@ -69,84 +60,50 @@ function upstreamHeaders() {
 }
 
 function fail(status, message) {
-  __qxDone({ response: {
-    status,
-    headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
-    body: message,
-  } });
+  __qxDone({ response: { status, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" }, body: message } });
 }
 
 const movieAssetId = "6793693246";
 const movieSlug = "2016-arrival";
-const markerKey = "arrivalzh";
-const playlistBridgeBase = "https://hls-amt.itunes.apple.com/__apple_movie_zh/" + movieSlug + "/index.m3u8?src=";
+const preferredBaseLanguage = "es-419";
+const stableRenditionId = movieSlug + "-zh-hans-v260904a";
+const playlistBridgeBase = "https://hls-amt.itunes.apple.com/__apple_movie_zh/" + movieSlug + "/index.m3u8?rev=v260904a&src=";
 
-function injectOriginal(masterBody, sourceUrl) {
-  let captured = null;
-  const __originalRequest = { url: sourceUrl };
-  const __originalResponse = { body: masterBody };
-  function __captureDone(value) { captured = value; }
-  const assetId = "6793693246";
-  const marker = "arrival-zh-hans-v1";
-  const url = __originalRequest.url || "";
-  const body = __originalResponse.body || "";
-  const target = new RegExp("(?:[?&]mainAssetAdamId=" + assetId + "(?:[&#]|$)|[?&]a=[^&#]*" + assetId + "(?:[&#]|$)|_A" + assetId + "_)").test(url);
-  if (!target || !body.startsWith("#EXTM3U")) {
-    __captureDone({});
-  } else if (body.includes(`STABLE-RENDITION-ID="${marker}"`)) {
-    __captureDone({ body });
-  } else {
-    const lineEnding = body.includes("\r\n") ? "\r\n" : "\n";
-    const lines = body.split(/\r?\n/);
-    const media = lines.map((line, index) => ({ line, index })).filter(({ line }) => line.startsWith("#EXT-X-MEDIA:") && /TYPE=SUBTITLES/.test(line));
-    const ordinary = media.filter(({ line }) => !/FORCED=YES/.test(line) && /URI=/.test(line) && !/LANGUAGE="zh-Hans"/.test(line));
-    const spanish = ordinary.filter(({ line }) => /LANGUAGE="es-419"/.test(line));
-    const pathways = spanish.map(({ line }) => line.match(/PATHWAY-ID="([^"]+)"/)?.[1]).filter(Boolean);
-    if (!spanish.length || (pathways.length > 0 && new Set(pathways).size !== pathways.length)) {
-      __captureDone({});
-    } else {
-      const added = spanish.map(({ line }) => {
-        const pathway = line.match(/PATHWAY-ID="([^"]+)"/)?.[1];
-        const group = line.match(/GROUP-ID="([^"]+)"/)?.[1];
-        const uri = line.match(/URI="([^"]+)"/)?.[1];
-        if (!group || !uri) return null;
-        const separator = uri.includes("?") ? "&" : "?";
-        const pathwayAttribute = pathway ? `,PATHWAY-ID="${pathway}"` : "";
-        return `#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="${group}",LANGUAGE="zh-Hans",NAME="简体中文",AUTOSELECT=YES,DEFAULT=NO,FORCED=NO${pathwayAttribute},STABLE-RENDITION-ID="${marker}",URI="${uri}${separator}arrivalzh=1"`;
-      });
-      if (added.some((value) => !value)) {
-        __captureDone({});
-      } else {
-        const insertAt = media.length ? media[0].index : lines.length;
-        lines.splice(insertAt, 0, ...added);
-        __captureDone({ body: lines.join(lineEnding) });
-      }
-    }
+function injectTrack(body, sourceUrl) {
+  if (typeof body !== "string" || !body.includes("#EXT-X-STREAM-INF:") || !body.includes('DATA-ID="com.apple.hls.feature.adam-id",VALUE="' + movieAssetId + '"')) return null;
+  if (body.includes('STABLE-RENDITION-ID="' + stableRenditionId + '"')) return body;
+  const lines = body.replace(/\r/g, "").split("\n");
+  const subtitleRows = lines.filter((line) => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES") && line.includes("FORCED=NO"));
+  const languages = preferredBaseLanguage === "en" ? ["en", "es-419", "es-ES"] : [preferredBaseLanguage, "es-419", "es-ES", "en"];
+  let baseRows = [];
+  for (const language of languages) {
+    const rows = subtitleRows.filter((line) => quotedAttribute(line, "LANGUAGE") === language && ["ap", "fa", "ak"].includes(quotedAttribute(line, "PATHWAY-ID")));
+    if (rows.length === 3) { baseRows = rows; break; }
   }
-  
-  return captured && typeof captured.body === "string" ? captured.body : null;
-}
-
-function routeMaster(body, sourceUrl) {
-  const injected = injectOriginal(body, sourceUrl);
-  if (!injected) return null;
-  const separator = injected.includes("\r\n") ? "\r\n" : "\n";
-  return injected.split(/\r?\n/).map((line) => {
+  if (baseRows.length !== 3) return null;
+  const chineseRows = baseRows.map((line) => {
+    const sourcePlaylist = absoluteUrl(quotedAttribute(line, "URI"), sourceUrl);
+    if (!sourcePlaylist) return null;
+    let output = setAttribute(line.replace(/,CHARACTERISTICS=(?:"[^"]*"|[^,]*)/g, ""), "LANGUAGE", "zh-Hans", true);
+    output = setAttribute(output, "NAME", "简体中文", true);
+    output = setAttribute(output, "DEFAULT", "NO");
+    output = setAttribute(output, "AUTOSELECT", "YES");
+    output = setAttribute(output, "ASSOC-LANGUAGE", "zh", true);
+    output = setAttribute(output, "STABLE-RENDITION-ID", stableRenditionId, true);
+    output = setAttribute(output, "URI", playlistBridgeBase + encodeURIComponent(sourcePlaylist), true);
+    return output;
+  });
+  lines.splice(lines.findIndex((line) => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES")), 0, ...chineseRows);
+  return lines.map((line) => {
     if (!line) return line;
     if (!line.startsWith("#")) return absoluteUrl(line, sourceUrl);
-    if (line.startsWith("#EXT-X-MEDIA:") && /LANGUAGE="zh-Hans"/.test(line)) {
-      const match = line.match(/URI="([^"]+)"/);
-      if (match && hasQueryFlag(match[1], markerKey)) {
-        const sourcePlaylist = removeQueryFlag(absoluteUrl(match[1], sourceUrl), markerKey);
-        return line.replace(/URI="[^"]+"/, 'URI="' + playlistBridgeBase + encodeURIComponent(sourcePlaylist) + '"');
-      }
-    }
+    if (line.startsWith("#EXT-X-MEDIA:") && line.includes('STABLE-RENDITION-ID="' + stableRenditionId + '"')) return line;
     return line.replace(/([A-Z0-9-]*URI)="([^"]+)"/g, (_, name, value) => name + '="' + absoluteUrl(value, sourceUrl) + '"');
-  }).join(separator);
+  }).join("\n");
 }
 
 const sourceUrl = nativePlaybackUrl(queryValue($request.url, "src"));
-if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.includes(movieAssetId)) {
+if (queryValue($request.url, "rev") !== "v260904a" || !/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.split('?')[0].endsWith("/WebObjects/MZPlayLocal.woa/hls/subscription/playlist.m3u8") || (queryValue(sourceUrl, "a") || queryValue(sourceUrl, "mainAssetAdamId")) !== movieAssetId) {
   fail(400, "Invalid movie master source");
 } else {
   $httpClient.get({ url: sourceUrl, headers: upstreamHeaders(), timeout: 10000 }, (error, response, data) => {
@@ -154,15 +111,8 @@ if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sour
       fail(response ? Number(response.status) || 502 : 502, error || "Movie master fetch failed");
       return;
     }
-    const body = routeMaster(data, sourceUrl);
-    if (!body) {
-      fail(502, "Movie master injection failed");
-      return;
-    }
-    __qxDone({ response: {
-      status: 200,
-      headers: { "Content-Type": "application/vnd.apple.mpegurl", "Cache-Control": "no-store" },
-      body,
-    } });
+    const body = injectTrack(data, sourceUrl);
+    if (!body) { fail(502, "Movie master injection failed"); return; }
+    __qxDone({ response: { status: 200, headers: { "Content-Type": "application/vnd.apple.mpegurl", "Cache-Control": "no-store" }, body } });
   });
 }

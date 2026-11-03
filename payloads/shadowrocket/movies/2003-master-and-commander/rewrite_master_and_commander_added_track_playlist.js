@@ -1,32 +1,26 @@
 const assetId = "6804923769";
 const markerKey = "m1504zhp1";
+function isPreparedFeature(value) {
+  try {
+    const match = String(value || "").trim().match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
+    return !!match && ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].includes(match[1].toLowerCase()) && ["P1485810495_A6804923769_en_subtitles_V1-.webvtt","P1485810495_A6804923769_en_subtitles_V2-.webvtt"].includes(decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1)));
+  } catch (_) { return false; }
+}
 const url = $request.url || "";
 const body = $response.body || "";
-function isMasterFeatureUrl(value) {
-  const raw=String(value||"").trim();if(raw.slice(0,8).toLowerCase()!=="https://")return false;
-  const rest=raw.slice(8),slash=rest.indexOf("/");if(slash<0)return false;
-  const host=rest.slice(0,slash).toLowerCase(),tail=rest.slice(slash);if(tail.includes("#"))return false;
-  const path=tail.split("?")[0],file=path.slice(path.lastIndexOf("/")+1);
-  return ["vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com","vod-ak-aoc.tv.apple.com"].includes(host)&&["P1478615099_A6804923769_en_subtitles_V2-.webvtt","P1485810495_A6804923769_en_subtitles_V2-.webvtt"].includes(file);
-}
 const marked = new RegExp("[?&]" + markerKey + "=1(?:&|$)").test(url);
-const target = new RegExp("(?:[?&](?:mainAssetAdamId|a)=[^&#]*" + assetId + "(?:[&#]|$)|_A" + assetId + "_)").test(url);
-if (!marked || !target || !body.startsWith("#EXTM3U")) {
-  $done({});
-} else {
-  const carriageReturn=String.fromCharCode(13),lineFeed=String.fromCharCode(10);
-  const lineEnding=body.includes(carriageReturn+lineFeed)?carriageReturn+lineFeed:lineFeed;
-  const lines=body.split(lineFeed).map(line=>line.endsWith(carriageReturn)?line.slice(0,-1):line);
-  const leaves=lines.filter(line=>isMasterFeatureUrl(line.trim()));
-  if(leaves.length!==1){$done({});}else{
-    const featureIndex=lines.findIndex(line=>line.trim()===leaves[0].trim()),rangeIndex=featureIndex-1;
-    const precedingRange=rangeIndex>=0&&lines[rangeIndex].startsWith("#EXT-X-BYTERANGE:")?lines[rangeIndex]:"";
-    if(precedingRange&&precedingRange!=="#EXT-X-BYTERANGE:162284@0"){$done({});}else{
-      const rewritten=lines.map((line,index)=>{
-        if(index!==featureIndex||line.trim()!==leaves[0].trim())return line;
-        const featureUrl=line.trim();return featureUrl+(featureUrl.includes("?")?"&":"?")+markerKey+"=1";
-      }).filter((line,index)=>!(precedingRange&&index===rangeIndex)).join(lineEnding);
-      $done({body:rewritten});
-    }
+const target = new RegExp("[?&](?:mainAssetAdamId|a)=" + assetId + "(?:[&#]|$)").test(url);
+if (!marked || !target || !body.startsWith("#EXTM3U")) $done({});
+else {
+  const lines = body.replace(/\r/g, "").split("\n");
+  const leaves = lines.map((s,i)=>({s,i})).filter(({s})=>isPreparedFeature(s));
+  if (leaves.length !== 1 || !lines.includes("#EXT-X-ENDLIST") || lines.some(s=>s.startsWith("#EXT-X-MAP:"))) $done({});
+  else {
+    const {s:feature,i} = leaves[0];
+    const filename = decodeURIComponent(feature.split("?")[0].split("/").pop());
+    const sizes = {"P1485810495_A6804923769_en_subtitles_V1-.webvtt":134977,"P1485810495_A6804923769_en_subtitles_V2-.webvtt":162284};
+    const range = lines[i-1]?.startsWith("#EXT-X-BYTERANGE:") ? lines[i-1] : "";
+    if (range && range !== "#EXT-X-BYTERANGE:" + sizes[filename] + "@0") $done({});
+    else $done({body:lines.map((line,j)=>j===i ? line + (line.includes("?")?"&":"?") + markerKey + "=1" : line).filter((_,j)=>!(range && j===i-1)).join(body.includes("\r\n")?"\r\n":"\n")});
   }
 }

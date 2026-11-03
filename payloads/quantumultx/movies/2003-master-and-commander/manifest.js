@@ -84,19 +84,16 @@ function injectTrack(body, sourceUrl) {
   const chineseRows = baseRows.map((line) => {
     const sourcePlaylist = absoluteUrl(quotedAttribute(line, "URI"), sourceUrl);
     if (!sourcePlaylist) return null;
-    let output = setAttribute(line, "LANGUAGE", "zh-Hans", true);
+    let output = setAttribute(line.replace(/,CHARACTERISTICS=(?:"[^"]*"|[^,]*)/g, ""), "LANGUAGE", "zh-Hans", true);
     output = setAttribute(output, "NAME", "简体中文", true);
     output = setAttribute(output, "DEFAULT", "NO");
     output = setAttribute(output, "AUTOSELECT", "YES");
     output = setAttribute(output, "ASSOC-LANGUAGE", "zh", true);
     output = setAttribute(output, "STABLE-RENDITION-ID", stableRenditionId, true);
     output = setAttribute(output, "URI", playlistBridgeBase + encodeURIComponent(sourcePlaylist), true);
-    output = output.replace(/,CHARACTERISTICS=(?:"[^"]*"|[^,]*)/g, "");
     return output;
   });
-  const firstSubtitleRow = lines.findIndex((line) => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES"));
-  if (firstSubtitleRow < 0) return null;
-  lines.splice(firstSubtitleRow, 0, ...chineseRows);
+  lines.splice(lines.findIndex((line) => line.startsWith("#EXT-X-MEDIA:") && line.includes("TYPE=SUBTITLES")), 0, ...chineseRows);
   return lines.map((line) => {
     if (!line) return line;
     if (!line.startsWith("#")) return absoluteUrl(line, sourceUrl);
@@ -106,7 +103,7 @@ function injectTrack(body, sourceUrl) {
 }
 
 const sourceUrl = nativePlaybackUrl(queryValue($request.url, "src"));
-if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.includes(movieAssetId)) {
+if (queryValue($request.url, "rev") !== "v260904a" || !/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.split('?')[0].endsWith("/WebObjects/MZPlayLocal.woa/hls/subscription/playlist.m3u8") || (queryValue(sourceUrl, "a") || queryValue(sourceUrl, "mainAssetAdamId")) !== movieAssetId) {
   fail(400, "Invalid movie master source");
 } else {
   $httpClient.get({ url: sourceUrl, headers: upstreamHeaders(), timeout: 10000 }, (error, response, data) => {
