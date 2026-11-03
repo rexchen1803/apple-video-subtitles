@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261027a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261103a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -17,198 +17,288 @@ http:
     - ^https?:\/\/play-cdn\.itunes\.apple\.com https://play.itunes.apple.com transparent
     - ^https?:\/\/play-edge-cdn\.itunes\.apple\.com https://play-edge.itunes.apple.com transparent
   script:
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2003-28-days-later\/index\.m3u8\?rev=shelf1002-d4548655248c-credit-v2&src=.+$'
-      name: movie-2003-28-days-later-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1995-12-monkeys\/index\.m3u8\?rev=nov1103-af0ce1150f0c&src=.+$'
+      name: movie-1995-12-monkeys-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2003-28-days-later\/index\.m3u8\?rev=shelf1002-d4548655248c-credit-v2&src=.+$'
-      name: movie-2003-28-days-later-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-12-monkeys\/index\.m3u8\?rev=nov1103-af0ce1150f0c&src=.+$'
+      name: movie-1995-12-monkeys-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2003-28-days-later\/full\.webvtt\?rev=shelf1002-d4548655248c-credit-v2&src=.+$'
-      name: movie-2003-28-days-later-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-12-monkeys\/full\.webvtt\?rev=nov1103-af0ce1150f0c&src=.+$'
+      name: movie-1995-12-monkeys-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2007-american-gangster\/index\.m3u8\?rev=shelf1002-21ba574ddeb3-credit-v2&src=.+$'
-      name: movie-2007-american-gangster-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1993-dave\/index\.m3u8\?rev=nov1103-e0c60e7390f7&src=.+$'
+      name: movie-1993-dave-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2007-american-gangster\/index\.m3u8\?rev=shelf1002-21ba574ddeb3-credit-v2&src=.+$'
-      name: movie-2007-american-gangster-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1993-dave\/index\.m3u8\?rev=nov1103-e0c60e7390f7&src=.+$'
+      name: movie-1993-dave-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2007-american-gangster\/full\.webvtt\?rev=shelf1002-21ba574ddeb3-credit-v2&src=.+$'
-      name: movie-2007-american-gangster-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1993-dave\/full\.webvtt\?rev=nov1103-e0c60e7390f7&src=.+$'
+      name: movie-1993-dave-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2001-black-hawk-down\/index\.m3u8\?rev=shelf1002-dcb4b0cab8cb-credit-v2&src=.+$'
-      name: movie-2001-black-hawk-down-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2014-interstellar\/index\.m3u8\?rev=nov1103-6fc55b7e640e&src=.+$'
+      name: movie-2014-interstellar-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2001-black-hawk-down\/index\.m3u8\?rev=shelf1002-dcb4b0cab8cb-credit-v2&src=.+$'
-      name: movie-2001-black-hawk-down-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2014-interstellar\/index\.m3u8\?rev=nov1103-6fc55b7e640e&src=.+$'
+      name: movie-2014-interstellar-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2001-black-hawk-down\/full\.webvtt\?rev=shelf1002-dcb4b0cab8cb-credit-v2&src=.+$'
-      name: movie-2001-black-hawk-down-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2014-interstellar\/full\.webvtt\?rev=nov1103-6fc55b7e640e&src=.+$'
+      name: movie-2014-interstellar-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2006-blood-diamond\/index\.m3u8\?rev=shelf1002-9648950795c1-credit-v2&src=.+$'
-      name: movie-2006-blood-diamond-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1994-pulp-fiction\/index\.m3u8\?rev=nov1103-8fd5be969c2b&src=.+$'
+      name: movie-1994-pulp-fiction-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2006-blood-diamond\/index\.m3u8\?rev=shelf1002-9648950795c1-credit-v2&src=.+$'
-      name: movie-2006-blood-diamond-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1994-pulp-fiction\/index\.m3u8\?rev=nov1103-8fd5be969c2b&src=.+$'
+      name: movie-1994-pulp-fiction-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2006-blood-diamond\/full\.webvtt\?rev=shelf1002-9648950795c1-credit-v2&src=.+$'
-      name: movie-2006-blood-diamond-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1994-pulp-fiction\/full\.webvtt\?rev=nov1103-8fd5be969c2b&src=.+$'
+      name: movie-1994-pulp-fiction-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1998-fallen\/index\.m3u8\?rev=shelf1002-342fb0c70442-credit-v2&src=.+$'
-      name: movie-1998-fallen-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1994-forrest-gump\/index\.m3u8\?rev=nov1103-f8230d9bb2f5&src=.+$'
+      name: movie-1994-forrest-gump-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1998-fallen\/index\.m3u8\?rev=shelf1002-342fb0c70442-credit-v2&src=.+$'
-      name: movie-1998-fallen-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1994-forrest-gump\/index\.m3u8\?rev=nov1103-f8230d9bb2f5&src=.+$'
+      name: movie-1994-forrest-gump-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1998-fallen\/full\.webvtt\?rev=shelf1002-342fb0c70442-credit-v2&src=.+$'
-      name: movie-1998-fallen-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1994-forrest-gump\/full\.webvtt\?rev=nov1103-f8230d9bb2f5&src=.+$'
+      name: movie-1994-forrest-gump-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2014-fury\/index\.m3u8\?rev=shelf1002-d179d8ebf9f6-credit-v2&src=.+$'
-      name: movie-2014-fury-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2016-the-nice-guys\/index\.m3u8\?rev=nov1103-88e1f9dbab3b&src=.+$'
+      name: movie-2016-the-nice-guys-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2014-fury\/index\.m3u8\?rev=shelf1002-d179d8ebf9f6-credit-v2&src=.+$'
-      name: movie-2014-fury-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2016-the-nice-guys\/index\.m3u8\?rev=nov1103-88e1f9dbab3b&src=.+$'
+      name: movie-2016-the-nice-guys-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2014-fury\/full\.webvtt\?rev=shelf1002-d179d8ebf9f6-credit-v2&src=.+$'
-      name: movie-2014-fury-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2016-the-nice-guys\/full\.webvtt\?rev=nov1103-88e1f9dbab3b&src=.+$'
+      name: movie-2016-the-nice-guys-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2010-going-the-distance\/index\.m3u8\?rev=shelf1002-53613ec3a8fb-credit-v2&src=.+$'
-      name: movie-2010-going-the-distance-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2002-minority-report\/index\.m3u8\?rev=nov1103-69640299476e&src=.+$'
+      name: movie-2002-minority-report-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2010-going-the-distance\/index\.m3u8\?rev=shelf1002-53613ec3a8fb-credit-v2&src=.+$'
-      name: movie-2010-going-the-distance-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2002-minority-report\/index\.m3u8\?rev=nov1103-69640299476e&src=.+$'
+      name: movie-2002-minority-report-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2010-going-the-distance\/full\.webvtt\?rev=shelf1002-53613ec3a8fb-credit-v2&src=.+$'
-      name: movie-2010-going-the-distance-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2002-minority-report\/full\.webvtt\?rev=nov1103-69640299476e&src=.+$'
+      name: movie-2002-minority-report-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1997-good-will-hunting\/index\.m3u8\?rev=shelf1002-a1fdcb98a5d7-credit-v2&src=.+$'
-      name: movie-1997-good-will-hunting-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1995-bad-boys\/index\.m3u8\?rev=nov1103-6ef1d79f94db&src=.+$'
+      name: movie-1995-bad-boys-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1997-good-will-hunting\/index\.m3u8\?rev=shelf1002-a1fdcb98a5d7-credit-v2&src=.+$'
-      name: movie-1997-good-will-hunting-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-bad-boys\/index\.m3u8\?rev=nov1103-6ef1d79f94db&src=.+$'
+      name: movie-1995-bad-boys-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1997-good-will-hunting\/full\.webvtt\?rev=shelf1002-a1fdcb98a5d7-credit-v2&src=.+$'
-      name: movie-1997-good-will-hunting-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-bad-boys\/full\.webvtt\?rev=nov1103-6ef1d79f94db&src=.+$'
+      name: movie-1995-bad-boys-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2002-insomnia\/index\.m3u8\?rev=shelf1002-68f174a204e7-credit-v2&src=.+$'
-      name: movie-2002-insomnia-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2013-prisoners\/index\.m3u8\?rev=nov1103-6daa17ad6475&src=.+$'
+      name: movie-2013-prisoners-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2002-insomnia\/index\.m3u8\?rev=shelf1002-68f174a204e7-credit-v2&src=.+$'
-      name: movie-2002-insomnia-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2013-prisoners\/index\.m3u8\?rev=nov1103-6daa17ad6475&src=.+$'
+      name: movie-2013-prisoners-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2002-insomnia\/full\.webvtt\?rev=shelf1002-68f174a204e7-credit-v2&src=.+$'
-      name: movie-2002-insomnia-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2013-prisoners\/full\.webvtt\?rev=nov1103-6daa17ad6475&src=.+$'
+      name: movie-2013-prisoners-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2015-jurassic-world\/index\.m3u8\?rev=shelf1002-61f160f59338-credit-v2&src=.+$'
-      name: movie-2015-jurassic-world-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2008-rachel-getting-married\/index\.m3u8\?rev=nov1103-cedd5982069e&src=.+$'
+      name: movie-2008-rachel-getting-married-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2015-jurassic-world\/index\.m3u8\?rev=shelf1002-61f160f59338-credit-v2&src=.+$'
-      name: movie-2015-jurassic-world-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-rachel-getting-married\/index\.m3u8\?rev=nov1103-cedd5982069e&src=.+$'
+      name: movie-2008-rachel-getting-married-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2015-jurassic-world\/full\.webvtt\?rev=shelf1002-61f160f59338-credit-v2&src=.+$'
-      name: movie-2015-jurassic-world-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-rachel-getting-married\/full\.webvtt\?rev=nov1103-cedd5982069e&src=.+$'
+      name: movie-2008-rachel-getting-married-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1976-taxi-driver\/index\.m3u8\?rev=shelf1002-a35439e85a3a-credit-v2&src=.+$'
-      name: movie-1976-taxi-driver-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1989-dead-poets-society\/index\.m3u8\?rev=nov1103-74a882e2b88d&src=.+$'
+      name: movie-1989-dead-poets-society-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1976-taxi-driver\/index\.m3u8\?rev=shelf1002-a35439e85a3a-credit-v2&src=.+$'
-      name: movie-1976-taxi-driver-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1989-dead-poets-society\/index\.m3u8\?rev=nov1103-74a882e2b88d&src=.+$'
+      name: movie-1989-dead-poets-society-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1976-taxi-driver\/full\.webvtt\?rev=shelf1002-a35439e85a3a-credit-v2&src=.+$'
-      name: movie-1976-taxi-driver-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1989-dead-poets-society\/full\.webvtt\?rev=nov1103-74a882e2b88d&src=.+$'
+      name: movie-1989-dead-poets-society-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2011-the-girl-with-the-dragon-tattoo\/index\.m3u8\?rev=shelf1002-511ca230dc1a-credit-v2&src=.+$'
-      name: movie-2011-the-girl-with-the-dragon-tattoo-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2008-get-smart\/index\.m3u8\?rev=nov1103-247c33b4a2e1&src=.+$'
+      name: movie-2008-get-smart-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2011-the-girl-with-the-dragon-tattoo\/index\.m3u8\?rev=shelf1002-511ca230dc1a-credit-v2&src=.+$'
-      name: movie-2011-the-girl-with-the-dragon-tattoo-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-get-smart\/index\.m3u8\?rev=nov1103-247c33b4a2e1&src=.+$'
+      name: movie-2008-get-smart-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2011-the-girl-with-the-dragon-tattoo\/full\.webvtt\?rev=shelf1002-511ca230dc1a-credit-v2&src=.+$'
-      name: movie-2011-the-girl-with-the-dragon-tattoo-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-get-smart\/full\.webvtt\?rev=nov1103-247c33b4a2e1&src=.+$'
+      name: movie-2008-get-smart-vtt
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2008-tropic-thunder\/index\.m3u8\?rev=shelf1002-fbb44dd760b6-credit-v2&src=.+$'
-      name: movie-2008-tropic-thunder-master
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2006-talladega-nights\/index\.m3u8\?rev=nov1103-2bcdd526499b&src=.+$'
+      name: movie-2006-talladega-nights-master
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-tropic-thunder\/index\.m3u8\?rev=shelf1002-fbb44dd760b6-credit-v2&src=.+$'
-      name: movie-2008-tropic-thunder-playlist
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2006-talladega-nights\/index\.m3u8\?rev=nov1103-2bcdd526499b&src=.+$'
+      name: movie-2006-talladega-nights-playlist
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-tropic-thunder\/full\.webvtt\?rev=shelf1002-fbb44dd760b6-credit-v2&src=.+$'
-      name: movie-2008-tropic-thunder-vtt
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2006-talladega-nights\/full\.webvtt\?rev=nov1103-2bcdd526499b&src=.+$'
+      name: movie-2006-talladega-nights-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2009-julie-and-julia\/index\.m3u8\?rev=nov1103-4727ffd19d96&src=.+$'
+      name: movie-2009-julie-and-julia-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2009-julie-and-julia\/index\.m3u8\?rev=nov1103-4727ffd19d96&src=.+$'
+      name: movie-2009-julie-and-julia-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2009-julie-and-julia\/full\.webvtt\?rev=nov1103-4727ffd19d96&src=.+$'
+      name: movie-2009-julie-and-julia-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1988-big\/index\.m3u8\?rev=nov1103-7376a389d1f6&src=.+$'
+      name: movie-1988-big-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1988-big\/index\.m3u8\?rev=nov1103-7376a389d1f6&src=.+$'
+      name: movie-1988-big-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1988-big\/full\.webvtt\?rev=nov1103-7376a389d1f6&src=.+$'
+      name: movie-1988-big-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/1995-clueless\/index\.m3u8\?rev=nov1103-0b7da4b5ad97&src=.+$'
+      name: movie-1995-clueless-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-clueless\/index\.m3u8\?rev=nov1103-0b7da4b5ad97&src=.+$'
+      name: movie-1995-clueless-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/1995-clueless\/full\.webvtt\?rev=nov1103-0b7da4b5ad97&src=.+$'
+      name: movie-1995-clueless-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2004-anchorman\/index\.m3u8\?rev=nov1103-a1bc6bcda5e8&src=.+$'
+      name: movie-2004-anchorman-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2004-anchorman\/index\.m3u8\?rev=nov1103-a1bc6bcda5e8&src=.+$'
+      name: movie-2004-anchorman-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2004-anchorman\/full\.webvtt\?rev=nov1103-a1bc6bcda5e8&src=.+$'
+      name: movie-2004-anchorman-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2010-eat-pray-love\/index\.m3u8\?rev=nov1103-0a760bc619f6&src=.+$'
+      name: movie-2010-eat-pray-love-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2010-eat-pray-love\/index\.m3u8\?rev=nov1103-0a760bc619f6&src=.+$'
+      name: movie-2010-eat-pray-love-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2010-eat-pray-love\/full\.webvtt\?rev=nov1103-0a760bc619f6&src=.+$'
+      name: movie-2010-eat-pray-love-vtt
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2008-body-of-lies\/index\.m3u8\?rev=nov1103-2e1ab7dbca31&src=.+$'
+      name: movie-2008-body-of-lies-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-body-of-lies\/index\.m3u8\?rev=nov1103-2e1ab7dbca31&src=.+$'
+      name: movie-2008-body-of-lies-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2008-body-of-lies\/full\.webvtt\?rev=nov1103-2e1ab7dbca31&src=.+$'
+      name: movie-2008-body-of-lies-vtt
       type: request
       require-body: false
       timeout: 30
@@ -237,21 +327,6 @@ http:
       name: f1-race-commentary-fan-zh
       type: response
       require-body: true
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_master\/2001-a-beautiful-mind\/index\.m3u8\?rev=v260925a&src=.+$'
-      name: movie-beautiful-mind-master
-      type: request
-      require-body: false
-      timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2001-a-beautiful-mind\/index\.m3u8\?rev=v260925a(?:&src=.+)?$'
-      name: movie-beautiful-mind-playlist
-      type: request
-      require-body: false
-      timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__apple_movie_zh\/2001-a-beautiful-mind\/seg-[0-4]\.webvtt\?rev=v260925a(?:&segments=[45])?$'
-      name: movie-beautiful-mind-vtt
-      type: request
-      require-body: false
-      timeout: 30
     - match: '^https://hls-amt.itunes.apple.com/__apple_series_master/dts-s08e01/index.m3u8(?:\?.*)?$'
       name: series-dts-s08e01-master
       type: request
@@ -372,157 +447,7 @@ http:
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6799243858(?:&.*)?$'
-      name: movie-the-martian-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6799243858[^#]*martianzh=1[^#]*$'
-      name: movie-the-martian-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+(?:P1468742269|P1477111467)_A6799243858_en_subtitles_V\d+-\.webvtt\?[^#]*martianzh=1[^#]*$'
-      name: movie-the-martian-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6793326577(?:&.*)?$'
-      name: movie-mi4-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793326577[^#]*mi4zhadd=1[^#]*$'
-      name: movie-mi4-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467262841_A6793326577_es-419_subtitles_V\d+-\.webvtt\?[^#]*mi4zhadd=1[^#]*$'
-      name: movie-mi4-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:a=6793332306|mainAssetAdamId=6793332306))[^#]*$'
-      name: movie-titanic-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6793332306[^#]*titaniczh=1[^#]*$'
-      name: movie-titanic-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:HLSAppleVideo211\/v4\/(?:[^\/]+\/)+P1474878312_A6793332306_es-419_subtitles_V2-|HLSAppleVideo221\/v4\/59\/aa\/9d\/59aa9ddd-f65a-085f-7a2c-c4b927941f8b\/empty-11688089)\.webvtt\?[^#]*titaniczh=1[^#]*$'
-      name: movie-titanic-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?:.*&)?a=6792938265(?:&.*)?$'
-      name: movie-gone-girl-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?[^#]*mainAssetAdamId=6792938265[^#]*gonegirlzh=1[^#]*$'
-      name: movie-gone-girl-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467262512_A6792938265_en_subtitles_V\d+-\.webvtt\?[^#]*gonegirlzh=1[^#]*$'
-      name: movie-gone-girl-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-amt\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1220541004_A960891136_fr-FR_subtitles_V2-\d+\.webvtt(?:\?.*)?$'
-      name: movie-interstellar-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
 
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793683930|a=[^#]*6793683930))[^#]*$'
-      name: movie-looper-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*mainAssetAdamId=6793683930)(?=[^#]*looperzh=1)[^#]*$'
-      name: movie-looper-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1464585025_A6793683930_en_subtitles_V\d+-\.webvtt\?(?=[^#]*looperzh=1)[^#]*$'
-      name: movie-looper-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))[^#]*$'
-      name: movie-bourne-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6800163537|a=[^#]*6800163537))(?=[^#]*bournezh=1)[^#]*$'
-      name: movie-bourne-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1473002829_A6800163537_es-419_subtitles_V2-\.webvtt\?(?=[^#]*bournezh=1)[^#]*$'
-      name: movie-bourne-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))[^#]*$'
-      name: movie-sixth-sense-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793615720|a=[^#]*6793615720))(?=[^#]*sixthsensezh=1)[^#]*$'
-      name: movie-sixth-sense-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1473679078_A6793615720_en_subtitles_V2-\.webvtt\?(?=[^#]*sixthsensezh=1)[^#]*$'
-      name: movie-sixth-sense-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))[^#]*$'
-      name: movie-et-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793021118|a=[^#]*6793021118))(?=[^#]*etzh=1)[^#]*$'
-      name: movie-et-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1469519891_A6793021118_en_subtitles_V2-\.webvtt\?(?=[^#]*etzh=1)[^#]*$'
-      name: movie-et-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
     - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793693246|a=[^#]*6793693246))[^#]*$'
       name: movie-arrival-manifest
       type: response
@@ -537,222 +462,6 @@ http:
       max-size: 2097152
     - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467244084_A6793693246_es-419_subtitles_V2-\.webvtt\?(?=[^#]*arrivalzh=1)[^#]*$'
       name: movie-arrival-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))[^#]*$'
-      name: movie-zodiac-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692535|a=[^#]*6793692535))(?=[^#]*zodiaczh=1)[^#]*$'
-      name: movie-zodiac-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467769615_A6793692535_es-419_subtitles_V2-\.webvtt\?(?=[^#]*zodiaczh=1)[^#]*$'
-      name: movie-zodiac-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))[^#]*$'
-      name: movie-i-robot-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793304264|a=[^#]*6793304264))(?=[^#]*irobotzh=1)[^#]*$'
-      name: movie-i-robot-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467262562_A6793304264_en_subtitles_V2-\.webvtt\?(?=[^#]*irobotzh=1)[^#]*$'
-      name: movie-i-robot-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))[^#]*$'
-      name: movie-the-proposal-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793346155|a=[^#]*6793346155))(?=[^#]*proposalzh=1)[^#]*$'
-      name: movie-the-proposal-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1473603759_A6793346155_en_subtitles_V2-\.webvtt\?(?=[^#]*proposalzh=1)[^#]*$'
-      name: movie-the-proposal-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))[^#]*$'
-      name: movie-rookie-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717467|a=[^#]*6793717467))(?=[^#]*rookiezh=1)[^#]*$'
-      name: movie-rookie-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1468119186_A6793717467_en_subtitles_V2-\.webvtt\?(?=[^#]*rookiezh=1)[^#]*$'
-      name: movie-rookie-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))[^#]*$'
-      name: movie-forgetting-sarah-marshall-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793695228|a=[^#]*6793695228))(?=[^#]*sarahzh=1)[^#]*$'
-      name: movie-forgetting-sarah-marshall-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467261904_A6793695228_en_subtitles_V2-\.webvtt\?(?=[^#]*sarahzh=1)[^#]*$'
-      name: movie-forgetting-sarah-marshall-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))[^#]*$'
-      name: movie-aviator-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793733076|a=[^#]*6793733076))(?=[^#]*aviatorzh=1)[^#]*$'
-      name: movie-aviator-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1473541551_A6793733076_es-419_subtitles_V2-\.webvtt\?(?=[^#]*aviatorzh=1)[^#]*$'
-      name: movie-aviator-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))[^#]*$'
-      name: movie-21-jump-street-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6792903247|a=[^#]*6792903247))(?=[^#]*jumpstreetzh=1)[^#]*$'
-      name: movie-21-jump-street-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1464582090_A6792903247_en_subtitles_V2-\.webvtt\?(?=[^#]*jumpstreetzh=1)[^#]*$'
-      name: movie-21-jump-street-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))[^#]*$'
-      name: movie-charlies-angels-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793717567|a=[^#]*6793717567))(?=[^#]*charliesangelszh=1)[^#]*$'
-      name: movie-charlies-angels-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1466465179_A6793717567_en_subtitles_V2-\.webvtt\?(?=[^#]*charliesangelszh=1)[^#]*$'
-      name: movie-charlies-angels-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))[^#]*$'
-      name: movie-zoolander-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6793692948|a=[^#]*6793692948))(?=[^#]*zoolanderzh=1)[^#]*$'
-      name: movie-zoolander-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+P1467242439_A6793692948_es-419_subtitles_V2-\.webvtt\?(?=[^#]*zoolanderzh=1)[^#]*$'
-      name: movie-zoolander-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804782509|a=[^#]*6804782509))[^#]*$'
-      name: movie-the-wolf-of-wall-street-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804782509|a=[^#]*6804782509))(?=[^#]*m1501zhp1=1)[^#]*$'
-      name: movie-the-wolf-of-wall-street-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804782509_[^\/?#]*\.webvtt\?(?=[^#]*m1501zhp1=1)[^#]*$'
-      name: movie-the-wolf-of-wall-street-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804788858|a=[^#]*6804788858))[^#]*$'
-      name: movie-her-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804788858|a=[^#]*6804788858))(?=[^#]*m1502zhp1=1)[^#]*$'
-      name: movie-her-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804788858_[^\/?#]*\.webvtt\?(?=[^#]*m1502zhp1=1)[^#]*$'
-      name: movie-her-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804781135|a=[^#]*6804781135))[^#]*$'
-      name: movie-the-social-network-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804781135|a=[^#]*6804781135))(?=[^#]*m1503zhp1=1)[^#]*$'
-      name: movie-the-social-network-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804781135_[^\/?#]*\.webvtt\?(?=[^#]*m1503zhp1=1)[^#]*$'
-      name: movie-the-social-network-vtt
       type: response
       require-body: true
       timeout: 30
@@ -775,208 +484,10 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6802779390|a=[^#]*6802779390))[^#]*$'
-      name: movie-zero-dark-thirty-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6802779390|a=[^#]*6802779390))(?=[^#]*m1505zhp1=1)[^#]*$'
-      name: movie-zero-dark-thirty-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6802779390_[^\/?#]*\.webvtt\?(?=[^#]*m1505zhp1=1)[^#]*$'
-      name: movie-zero-dark-thirty-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804557496|a=[^#]*6804557496))[^#]*$'
-      name: movie-school-of-rock-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804557496|a=[^#]*6804557496))(?=[^#]*m1506zhp1=1)[^#]*$'
-      name: movie-school-of-rock-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804557496_[^\/?#]*\.webvtt\?(?=[^#]*m1506zhp1=1)[^#]*$'
-      name: movie-school-of-rock-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804925972|a=[^#]*6804925972))[^#]*$'
-      name: movie-ferris-buellers-day-off-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804925972|a=[^#]*6804925972))(?=[^#]*m1507zhp1=1)[^#]*$'
-      name: movie-ferris-buellers-day-off-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804925972_[^\/?#]*\.webvtt\?(?=[^#]*m1507zhp1=1)[^#]*$'
-      name: movie-ferris-buellers-day-off-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6802449163|a=[^#]*6802449163))[^#]*$'
-      name: movie-superbad-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6802449163|a=[^#]*6802449163))(?=[^#]*m1508zhp1=1)[^#]*$'
-      name: movie-superbad-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6802449163_[^\/?#]*\.webvtt\?(?=[^#]*m1508zhp1=1)[^#]*$'
-      name: movie-superbad-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803646799|a=[^#]*6803646799))[^#]*$'
-      name: movie-a-league-of-their-own-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803646799|a=[^#]*6803646799))(?=[^#]*m1509zhp1=1)[^#]*$'
-      name: movie-a-league-of-their-own-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6803646799_[^\/?#]*\.webvtt\?(?=[^#]*m1509zhp1=1)[^#]*$'
-      name: movie-a-league-of-their-own-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804791114|a=[^#]*6804791114))[^#]*$'
-      name: movie-troy-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804791114|a=[^#]*6804791114))(?=[^#]*m1510zhp1=1)[^#]*$'
-      name: movie-troy-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804791114_[^\/?#]*\.webvtt\?(?=[^#]*m1510zhp1=1)[^#]*$'
-      name: movie-troy-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6794488214|a=[^#]*6794488214))[^#]*$'
-      name: movie-war-of-the-worlds-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6794488214|a=[^#]*6794488214))(?=[^#]*m1511zhp1=1)[^#]*$'
-      name: movie-war-of-the-worlds-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6794488214_[^\/?#]*\.webvtt\?(?=[^#]*m1511zhp1=1)[^#]*$'
-      name: movie-war-of-the-worlds-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6806102086|a=[^#]*6806102086))[^#]*$'
-      name: movie-mamma-mia-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6806102086|a=[^#]*6806102086))(?=[^#]*m1512zhp1=1)[^#]*$'
-      name: movie-mamma-mia-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6806102086_[^\/?#]*\.webvtt\?(?=[^#]*m1512zhp1=1)[^#]*$'
-      name: movie-mamma-mia-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803647112|a=[^#]*6803647112))[^#]*$'
-      name: movie-easy-a-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803647112|a=[^#]*6803647112))(?=[^#]*m1513zhp1=1)[^#]*$'
-      name: movie-easy-a-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6803647112_[^\/?#]*\.webvtt\?(?=[^#]*m1513zhp1=1)[^#]*$'
-      name: movie-easy-a-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803646767|a=[^#]*6803646767))[^#]*$'
-      name: movie-definitely-maybe-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6803646767|a=[^#]*6803646767))(?=[^#]*m1514zhp1=1)[^#]*$'
-      name: movie-definitely-maybe-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6803646767_[^\/?#]*\.webvtt\?(?=[^#]*m1514zhp1=1)[^#]*$'
-      name: movie-definitely-maybe-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804789316|a=[^#]*6804789316))[^#]*$'
-      name: movie-the-informant-manifest
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/play(?:-edge)?(?:-cdn)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/stream\/playlist\.m3u8\?(?=[^#]*(?:mainAssetAdamId=6804789316|a=[^#]*6804789316))(?=[^#]*m1515zhp1=1)[^#]*$'
-      name: movie-the-informant-playlist
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
-    - match: '^https:\/\/vod-(?:ap|fa|ak)-aoc\.tv\.apple\.com\/itunes-assets\/(?:[^\/]+\/)+[^\/?#]*_A6804789316_[^\/?#]*\.webvtt\?(?=[^#]*m1515zhp1=1)[^#]*$'
-      name: movie-the-informant-vtt
-      type: response
-      require-body: true
-      timeout: 30
-      max-size: 2097152
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
     interval: 86400
   f1-replay-track-master:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_master.js
@@ -1062,429 +573,192 @@ script-providers:
   series-dts-s08e08-vtt:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/vtt-dts-s08e08.js
     interval: 86400
-  movie-the-martian-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-the-martian/inject_the_martian_zh_hans_added_track.js
-    interval: 86400
-  movie-the-martian-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-the-martian/rewrite_the_martian_added_track_playlist.js
-    interval: 86400
-  movie-the-martian-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-the-martian/serve_the_martian_zh_hans_added_track.js
-    interval: 86400
-  movie-mi4-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2011-mission-impossible-ghost-protocol/inject_mi4_zh_hans_added_track.js
-    interval: 86400
-  movie-mi4-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2011-mission-impossible-ghost-protocol/rewrite_mi4_added_track_playlist.js
-    interval: 86400
-  movie-mi4-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2011-mission-impossible-ghost-protocol/serve_mi4_zh_hans_added_track.js
-    interval: 86400
-  movie-titanic-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1997-titanic/inject_titanic_zh_hans_added_track.js
-    interval: 86400
-  movie-titanic-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1997-titanic/rewrite_titanic_added_track_playlist.js
-    interval: 86400
-  movie-titanic-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1997-titanic/serve_titanic_zh_hans_added_track.js
-    interval: 86400
-  movie-gone-girl-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2014-gone-girl/inject_gone_girl_zh_hans_added_track.js
-    interval: 86400
-  movie-gone-girl-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2014-gone-girl/rewrite_gone_girl_added_track_playlist.js
-    interval: 86400
-  movie-gone-girl-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2014-gone-girl/serve_gone_girl_zh_hans_added_track.js
-    interval: 86400
-  movie-looper-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-looper/inject_looper_zh_hans_added_track.js
-    interval: 86400
-  movie-looper-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-looper/rewrite_looper_added_track_playlist.js
-    interval: 86400
-  movie-looper-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-looper/serve_looper_zh_hans_added_track.js
-    interval: 86400
-  movie-bourne-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-the-bourne-identity/inject_bourne_zh_hans_added_track.js
-    interval: 86400
-  movie-bourne-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-the-bourne-identity/rewrite_bourne_added_track_playlist.js
-    interval: 86400
-  movie-bourne-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-the-bourne-identity/serve_bourne_zh_hans_added_track.js
-    interval: 86400
-  movie-sixth-sense-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1999-the-sixth-sense/inject_sixth_sense_zh_hans_added_track.js
-    interval: 86400
-  movie-sixth-sense-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1999-the-sixth-sense/rewrite_sixth_sense_added_track_playlist.js
-    interval: 86400
-  movie-sixth-sense-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1999-the-sixth-sense/serve_sixth_sense_zh_hans_added_track.js
-    interval: 86400
-  movie-et-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1982-et-the-extra-terrestrial/inject_et_zh_hans_added_track.js
-    interval: 86400
-  movie-et-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1982-et-the-extra-terrestrial/rewrite_et_added_track_playlist.js
-    interval: 86400
-  movie-et-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1982-et-the-extra-terrestrial/serve_et_zh_hans_added_track.js
-    interval: 86400
   movie-arrival-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2016-arrival/inject_arrival_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-arrival/inject_arrival_zh_hans_added_track.js
     interval: 86400
   movie-arrival-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2016-arrival/rewrite_arrival_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-arrival/rewrite_arrival_added_track_playlist.js
     interval: 86400
   movie-arrival-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2016-arrival/serve_arrival_zh_hans_added_track.js
-    interval: 86400
-  movie-zodiac-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-zodiac/inject_zodiac_zh_hans_added_track.js
-    interval: 86400
-  movie-zodiac-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-zodiac/rewrite_zodiac_added_track_playlist.js
-    interval: 86400
-  movie-zodiac-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-zodiac/serve_zodiac_zh_hans_added_track.js
-    interval: 86400
-  movie-i-robot-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-i-robot/inject_i_robot_zh_hans_added_track.js
-    interval: 86400
-  movie-i-robot-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2004-i-robot/rewrite_i_robot_added_track_playlist.js
-    interval: 86400
-  movie-i-robot-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-i-robot/serve_i_robot_zh_hans_added_track.js
-    interval: 86400
-  movie-the-proposal-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-proposal/inject_the_proposal_zh_hans_added_track.js
-    interval: 86400
-  movie-the-proposal-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-proposal/rewrite_the_proposal_added_track_playlist.js
-    interval: 86400
-  movie-the-proposal-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-proposal/serve_the_proposal_zh_hans_added_track.js
-    interval: 86400
-  movie-rookie-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-the-rookie/inject_the_rookie_zh_hans_added_track.js
-    interval: 86400
-  movie-rookie-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2002-the-rookie/rewrite_the_rookie_added_track_playlist.js
-    interval: 86400
-  movie-rookie-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-the-rookie/serve_the_rookie_zh_hans_added_track.js
-    interval: 86400
-  movie-forgetting-sarah-marshall-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-forgetting-sarah-marshall/inject_forgetting_sarah_marshall_zh_hans_added_track.js
-    interval: 86400
-  movie-forgetting-sarah-marshall-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-forgetting-sarah-marshall/rewrite_forgetting_sarah_marshall_added_track_playlist.js
-    interval: 86400
-  movie-forgetting-sarah-marshall-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-forgetting-sarah-marshall/serve_forgetting_sarah_marshall_zh_hans_added_track.js
-    interval: 86400
-  movie-aviator-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-the-aviator/inject_aviator_zh_hans_added_track.js
-    interval: 86400
-  movie-aviator-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-the-aviator/rewrite_aviator_added_track_playlist.js
-    interval: 86400
-  movie-aviator-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-the-aviator/serve_aviator_zh_hans_added_track.js
-    interval: 86400
-  movie-21-jump-street-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-21-jump-street/inject_21_jump_street_zh_hans_added_track.js
-    interval: 86400
-  movie-21-jump-street-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-21-jump-street/rewrite_21_jump_street_added_track_playlist.js
-    interval: 86400
-  movie-21-jump-street-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-21-jump-street/serve_21_jump_street_zh_hans_added_track.js
-    interval: 86400
-  movie-charlies-angels-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2000-charlies-angels/inject_charlies_angels_zh_hans_added_track.js
-    interval: 86400
-  movie-charlies-angels-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2000-charlies-angels/rewrite_charlies_angels_added_track_playlist.js
-    interval: 86400
-  movie-charlies-angels-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2000-charlies-angels/serve_charlies_angels_zh_hans_added_track.js
-    interval: 86400
-  movie-zoolander-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-zoolander/inject_zoolander_zh_hans_added_track.js
-    interval: 86400
-  movie-zoolander-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-zoolander/rewrite_zoolander_added_track_playlist.js
-    interval: 86400
-  movie-zoolander-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-zoolander/serve_zoolander_zh_hans_added_track.js
-    interval: 86400
-  movie-interstellar-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2014-interstellar/serve_interstellar_fr_as_zh_hans.js
-    interval: 86400
-  movie-the-wolf-of-wall-street-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-the-wolf-of-wall-street/inject_the_wolf_of_wall_street_zh_hans_added_track.js
-    interval: 86400
-  movie-the-wolf-of-wall-street-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-the-wolf-of-wall-street/rewrite_the_wolf_of_wall_street_added_track_playlist.js
-    interval: 86400
-  movie-the-wolf-of-wall-street-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-the-wolf-of-wall-street/serve_the_wolf_of_wall_street_zh_hans_added_track.js
-    interval: 86400
-  movie-her-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-her/inject_her_zh_hans_added_track.js
-    interval: 86400
-  movie-her-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-her/rewrite_her_added_track_playlist.js
-    interval: 86400
-  movie-her-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2013-her/serve_her_zh_hans_added_track.js
-    interval: 86400
-  movie-the-social-network-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-the-social-network/inject_the_social_network_zh_hans_added_track.js
-    interval: 86400
-  movie-the-social-network-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-the-social-network/rewrite_the_social_network_added_track_playlist.js
-    interval: 86400
-  movie-the-social-network-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-the-social-network/serve_the_social_network_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-arrival/serve_arrival_zh_hans_added_track.js
     interval: 86400
   movie-master-and-commander-manifest:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-master-and-commander/inject_master_and_commander_zh_hans_added_track.js
     interval: 86400
   movie-master-and-commander-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-master-and-commander/rewrite_master_and_commander_added_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2003-master-and-commander/rewrite_master_and_commander_added_track_playlist.js
     interval: 86400
   movie-master-and-commander-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2003-master-and-commander/serve_master_and_commander_zh_hans_added_track.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2003-master-and-commander/serve_master_and_commander_zh_hans_added_track.js
     interval: 86400
-  movie-zero-dark-thirty-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-zero-dark-thirty/inject_zero_dark_thirty_zh_hans_added_track.js
+  movie-1995-12-monkeys-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-12-monkeys/manifest.js
     interval: 86400
-  movie-zero-dark-thirty-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-zero-dark-thirty/rewrite_zero_dark_thirty_added_track_playlist.js
+  movie-1995-12-monkeys-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-12-monkeys/playlist.js
     interval: 86400
-  movie-zero-dark-thirty-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2012-zero-dark-thirty/serve_zero_dark_thirty_zh_hans_added_track.js
+  movie-1995-12-monkeys-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-12-monkeys/subtitle.js
     interval: 86400
-  movie-school-of-rock-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-school-of-rock/inject_school_of_rock_zh_hans_added_track.js
+  movie-1993-dave-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1993-dave/manifest.js
     interval: 86400
-  movie-school-of-rock-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-school-of-rock/rewrite_school_of_rock_added_track_playlist.js
+  movie-1993-dave-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1993-dave/playlist.js
     interval: 86400
-  movie-school-of-rock-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-school-of-rock/serve_school_of_rock_zh_hans_added_track.js
+  movie-1993-dave-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1993-dave/subtitle.js
     interval: 86400
-  movie-ferris-buellers-day-off-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1986-ferris-buellers-day-off/inject_ferris_buellers_day_off_zh_hans_added_track.js
+  movie-2014-interstellar-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2014-interstellar/manifest-current.js
     interval: 86400
-  movie-ferris-buellers-day-off-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1986-ferris-buellers-day-off/rewrite_ferris_buellers_day_off_added_track_playlist.js
+  movie-2014-interstellar-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2014-interstellar/playlist-current.js
     interval: 86400
-  movie-ferris-buellers-day-off-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1986-ferris-buellers-day-off/serve_ferris_buellers_day_off_zh_hans_added_track.js
+  movie-2014-interstellar-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2014-interstellar/subtitle-current.js
     interval: 86400
-  movie-superbad-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-superbad/inject_superbad_zh_hans_added_track.js
+  movie-1994-pulp-fiction-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-pulp-fiction/manifest.js
     interval: 86400
-  movie-superbad-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-superbad/rewrite_superbad_added_track_playlist.js
+  movie-1994-pulp-fiction-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-pulp-fiction/playlist.js
     interval: 86400
-  movie-superbad-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-superbad/serve_superbad_zh_hans_added_track.js
+  movie-1994-pulp-fiction-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-pulp-fiction/subtitle.js
     interval: 86400
-  movie-a-league-of-their-own-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1992-a-league-of-their-own/inject_a_league_of_their_own_zh_hans_added_track.js
+  movie-1994-forrest-gump-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-forrest-gump/manifest.js
     interval: 86400
-  movie-a-league-of-their-own-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1992-a-league-of-their-own/rewrite_a_league_of_their_own_added_track_playlist.js
+  movie-1994-forrest-gump-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-forrest-gump/playlist.js
     interval: 86400
-  movie-a-league-of-their-own-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1992-a-league-of-their-own/serve_a_league_of_their_own_zh_hans_added_track.js
+  movie-1994-forrest-gump-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1994-forrest-gump/subtitle.js
     interval: 86400
-  movie-troy-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-troy/inject_troy_zh_hans_added_track.js
+  movie-2016-the-nice-guys-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-the-nice-guys/manifest.js
     interval: 86400
-  movie-troy-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-troy/rewrite_troy_added_track_playlist.js
+  movie-2016-the-nice-guys-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-the-nice-guys/playlist.js
     interval: 86400
-  movie-troy-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2004-troy/serve_troy_zh_hans_added_track.js
+  movie-2016-the-nice-guys-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2016-the-nice-guys/subtitle.js
     interval: 86400
-  movie-war-of-the-worlds-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2005-war-of-the-worlds/inject_war_of_the_worlds_zh_hans_added_track.js
+  movie-2002-minority-report-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2002-minority-report/manifest.js
     interval: 86400
-  movie-war-of-the-worlds-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2005-war-of-the-worlds/rewrite_war_of_the_worlds_added_track_playlist.js
+  movie-2002-minority-report-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2002-minority-report/playlist.js
     interval: 86400
-  movie-war-of-the-worlds-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2005-war-of-the-worlds/serve_war_of_the_worlds_zh_hans_added_track.js
+  movie-2002-minority-report-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2002-minority-report/subtitle.js
     interval: 86400
-  movie-mamma-mia-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-mamma-mia/inject_mamma_mia_zh_hans_added_track.js
+  movie-1995-bad-boys-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-bad-boys/manifest.js
     interval: 86400
-  movie-mamma-mia-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-mamma-mia/rewrite_mamma_mia_added_track_playlist.js
+  movie-1995-bad-boys-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-bad-boys/playlist.js
     interval: 86400
-  movie-mamma-mia-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-mamma-mia/serve_mamma_mia_zh_hans_added_track.js
+  movie-1995-bad-boys-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-bad-boys/subtitle.js
     interval: 86400
-  movie-easy-a-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-easy-a/inject_easy_a_zh_hans_added_track.js
+  movie-2013-prisoners-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2013-prisoners/manifest.js
     interval: 86400
-  movie-easy-a-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-easy-a/rewrite_easy_a_added_track_playlist.js
+  movie-2013-prisoners-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2013-prisoners/playlist.js
     interval: 86400
-  movie-easy-a-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-easy-a/serve_easy_a_zh_hans_added_track.js
+  movie-2013-prisoners-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2013-prisoners/subtitle.js
     interval: 86400
-  movie-definitely-maybe-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-definitely-maybe/inject_definitely_maybe_zh_hans_added_track.js
+  movie-2008-rachel-getting-married-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-rachel-getting-married/manifest.js
     interval: 86400
-  movie-definitely-maybe-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2008-definitely-maybe/rewrite_definitely_maybe_added_track_playlist.js
+  movie-2008-rachel-getting-married-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-rachel-getting-married/playlist.js
     interval: 86400
-  movie-definitely-maybe-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2008-definitely-maybe/serve_definitely_maybe_zh_hans_added_track.js
+  movie-2008-rachel-getting-married-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-rachel-getting-married/subtitle.js
     interval: 86400
-  movie-the-informant-manifest:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-informant/inject_the_informant_zh_hans_added_track.js
+  movie-1989-dead-poets-society-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1989-dead-poets-society/manifest.js
     interval: 86400
-  movie-the-informant-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-informant/rewrite_the_informant_added_track_playlist.js
+  movie-1989-dead-poets-society-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1989-dead-poets-society/playlist.js
     interval: 86400
-  movie-the-informant-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2009-the-informant/serve_the_informant_zh_hans_added_track.js
+  movie-1989-dead-poets-society-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1989-dead-poets-society/subtitle.js
     interval: 86400
-  movie-beautiful-mind-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2001-a-beautiful-mind/master.js
+  movie-2008-get-smart-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-get-smart/manifest.js
     interval: 86400
-  movie-beautiful-mind-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-a-beautiful-mind/playlist.js
+  movie-2008-get-smart-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-get-smart/playlist.js
     interval: 86400
-  movie-beautiful-mind-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-a-beautiful-mind/vtt.js
+  movie-2008-get-smart-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-get-smart/subtitle.js
     interval: 86400
-  movie-2003-28-days-later-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-28-days-later/master.js
+  movie-2006-talladega-nights-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2006-talladega-nights/manifest.js
     interval: 86400
-  movie-2003-28-days-later-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-28-days-later/playlist.js
+  movie-2006-talladega-nights-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2006-talladega-nights/playlist.js
     interval: 86400
-  movie-2003-28-days-later-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2003-28-days-later/vtt.js
+  movie-2006-talladega-nights-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2006-talladega-nights/subtitle.js
     interval: 86400
-  movie-2007-american-gangster-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-american-gangster/master.js
+  movie-2009-julie-and-julia-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2009-julie-and-julia/manifest.js
     interval: 86400
-  movie-2007-american-gangster-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-american-gangster/playlist.js
+  movie-2009-julie-and-julia-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2009-julie-and-julia/playlist.js
     interval: 86400
-  movie-2007-american-gangster-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2007-american-gangster/vtt.js
+  movie-2009-julie-and-julia-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2009-julie-and-julia/subtitle.js
     interval: 86400
-  movie-2001-black-hawk-down-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2001-black-hawk-down/master.js
+  movie-1988-big-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1988-big/manifest.js
     interval: 86400
-  movie-2001-black-hawk-down-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2001-black-hawk-down/playlist.js
+  movie-1988-big-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1988-big/playlist.js
     interval: 86400
-  movie-2001-black-hawk-down-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2001-black-hawk-down/vtt.js
+  movie-1988-big-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1988-big/subtitle.js
     interval: 86400
-  movie-2006-blood-diamond-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2006-blood-diamond/master.js
+  movie-1995-clueless-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-clueless/manifest.js
     interval: 86400
-  movie-2006-blood-diamond-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2006-blood-diamond/playlist.js
+  movie-1995-clueless-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-clueless/playlist.js
     interval: 86400
-  movie-2006-blood-diamond-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2006-blood-diamond/vtt.js
+  movie-1995-clueless-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-clueless/subtitle.js
     interval: 86400
-  movie-1998-fallen-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1998-fallen/master.js
+  movie-2004-anchorman-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2004-anchorman/manifest.js
     interval: 86400
-  movie-1998-fallen-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1998-fallen/playlist.js
+  movie-2004-anchorman-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2004-anchorman/playlist.js
     interval: 86400
-  movie-1998-fallen-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1998-fallen/vtt.js
+  movie-2004-anchorman-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2004-anchorman/subtitle.js
     interval: 86400
-  movie-2014-fury-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2014-fury/master.js
+  movie-2010-eat-pray-love-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2010-eat-pray-love/manifest.js
     interval: 86400
-  movie-2014-fury-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2014-fury/playlist.js
+  movie-2010-eat-pray-love-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2010-eat-pray-love/playlist.js
     interval: 86400
-  movie-2014-fury-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2014-fury/vtt.js
+  movie-2010-eat-pray-love-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2010-eat-pray-love/subtitle.js
     interval: 86400
-  movie-2010-going-the-distance-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2010-going-the-distance/master.js
+  movie-2008-body-of-lies-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-body-of-lies/manifest.js
     interval: 86400
-  movie-2010-going-the-distance-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2010-going-the-distance/playlist.js
+  movie-2008-body-of-lies-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-body-of-lies/playlist.js
     interval: 86400
-  movie-2010-going-the-distance-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2010-going-the-distance/vtt.js
-    interval: 86400
-  movie-1997-good-will-hunting-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1997-good-will-hunting/master.js
-    interval: 86400
-  movie-1997-good-will-hunting-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1997-good-will-hunting/playlist.js
-    interval: 86400
-  movie-1997-good-will-hunting-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/1997-good-will-hunting/vtt.js
-    interval: 86400
-  movie-2002-insomnia-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-insomnia/master.js
-    interval: 86400
-  movie-2002-insomnia-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-insomnia/playlist.js
-    interval: 86400
-  movie-2002-insomnia-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2002-insomnia/vtt.js
-    interval: 86400
-  movie-2015-jurassic-world-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-jurassic-world/master.js
-    interval: 86400
-  movie-2015-jurassic-world-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-jurassic-world/playlist.js
-    interval: 86400
-  movie-2015-jurassic-world-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2015-jurassic-world/vtt.js
-    interval: 86400
-  movie-1976-taxi-driver-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1976-taxi-driver/master.js
-    interval: 86400
-  movie-1976-taxi-driver-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1976-taxi-driver/playlist.js
-    interval: 86400
-  movie-1976-taxi-driver-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/1976-taxi-driver/vtt.js
-    interval: 86400
-  movie-2011-the-girl-with-the-dragon-tattoo-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2011-the-girl-with-the-dragon-tattoo/master.js
-    interval: 86400
-  movie-2011-the-girl-with-the-dragon-tattoo-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2011-the-girl-with-the-dragon-tattoo/playlist.js
-    interval: 86400
-  movie-2011-the-girl-with-the-dragon-tattoo-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a64112e3bd1cf78bc9561c8a72f056d07fce9290/payloads/stash/movies/2011-the-girl-with-the-dragon-tattoo/vtt.js
-    interval: 86400
-  movie-2008-tropic-thunder-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-tropic-thunder/master.js
-    interval: 86400
-  movie-2008-tropic-thunder-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-tropic-thunder/playlist.js
-    interval: 86400
-  movie-2008-tropic-thunder-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/movies/2008-tropic-thunder/vtt.js
+  movie-2008-body-of-lies-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-body-of-lies/subtitle.js
     interval: 86400
