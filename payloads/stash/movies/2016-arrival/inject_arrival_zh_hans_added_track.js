@@ -1,5 +1,6 @@
 const assetId = "6793693246";
 const marker = "arrival-zh-hans-v1";
+const markerKey = "arrivalzh";
 const url = $request.url || "";
 const body = $response.body || "";
 const target = new RegExp("(?:[?&]mainAssetAdamId=" + assetId + "(?:[&#]|$)|[?&]a=[^&#]*" + assetId + "(?:[&#]|$)|_A" + assetId + "_)").test(url);
@@ -24,7 +25,7 @@ if (!target || !body.startsWith("#EXTM3U")) {
       if (!group || !uri) return null;
       const separator = uri.includes("?") ? "&" : "?";
       const pathwayAttribute = pathway ? `,PATHWAY-ID="${pathway}"` : "";
-      return `#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="${group}",LANGUAGE="zh-Hans",NAME="简体中文",AUTOSELECT=YES,DEFAULT=NO,FORCED=NO${pathwayAttribute},STABLE-RENDITION-ID="${marker}",URI="${uri}${separator}arrivalzh=1"`;
+      return `#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="${group}",LANGUAGE="zh-Hans",NAME="简体中文",AUTOSELECT=YES,DEFAULT=NO,FORCED=NO${pathwayAttribute},STABLE-RENDITION-ID="${marker}",URI="${uri}${separator}${markerKey}=1"`;
     });
     if (added.some((value) => !value)) {
       $done({});

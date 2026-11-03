@@ -17,7 +17,7 @@ function nativePlaybackUrl(value) {
 function absoluteUrl(value, baseUrl) {
   value = nativePlaybackUrl(value);
   baseUrl = nativePlaybackUrl(baseUrl);
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   const originMatch = baseUrl.match(/^(https?:\/\/[^/]+)/i);
   if (!originMatch) return value;
   if (value.startsWith("/")) return originMatch[1] + value;
@@ -33,11 +33,15 @@ function absoluteUrl(value, baseUrl) {
   return originMatch[1] + "/" + normalized.join("/");
 }
 
-function validMasterFeatureSource(value) {
-  const raw=String(value||"");if(raw.slice(0,8).toLowerCase()!=="https://")return false;
-  const rest=raw.slice(8),slash=rest.indexOf("/");if(slash<0)return false;
-  const host=rest.slice(0,slash).toLowerCase(),p=rest.slice(slash).split("?")[0],file=p.slice(p.lastIndexOf("/")+1);
-  return ["vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com","vod-ak-aoc.tv.apple.com"].includes(host)&&["P1478615099_A6804923769_en_subtitles_V2-.webvtt","P1485810495_A6804923769_en_subtitles_V2-.webvtt"].includes(file);
+function isAllowedNativeDonorUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    if (url.protocol !== "https:" || url.username || url.password || url.port || ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].indexOf(url.hostname.toLowerCase()) < 0) return false;
+    const filename = decodeURIComponent(url.pathname.split("/").pop() || "");
+    return ["P1485810495_A6804923769_en_subtitles_V1-.webvtt","P1485810495_A6804923769_en_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
+  } catch (_) {
+    return false;
+  }
 }
 function upstreamHeaders() {
   const output = {};
@@ -57,7 +61,7 @@ const movieAssetId = "6804923769";
 const movieSlug = "2003-master-and-commander";
 const vttBridgeBase = "https://hls-amt.itunes.apple.com/__apple_movie_zh/" + movieSlug + "/full.webvtt?rev=v260904a&src=";
 const sourceUrl = nativePlaybackUrl(queryValue($request.url, "src"));
-if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.includes(movieAssetId)) {
+if (queryValue($request.url, "rev") !== "v260904a" || !/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.split('?')[0].endsWith("/WebObjects/MZPlayLocal.woa/hls/subscription/stream/playlist.m3u8") || (queryValue(sourceUrl, "mainAssetAdamId") || queryValue(sourceUrl, "a")) !== movieAssetId) {
   fail(400, "Invalid subtitle playlist source");
 } else {
   $httpClient.get({ url: sourceUrl, headers: upstreamHeaders(), timeout: 10000 }, (error, response, data) => {
@@ -66,15 +70,23 @@ if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sour
       return;
     }
     const sourceLines = data.replace(/\r/g, "").split("\n");
+    if (!sourceLines.includes("#EXT-X-ENDLIST") || sourceLines.some(line => line.startsWith("#EXT-X-MAP:"))) { fail(502, "Unsupported subtitle transport"); return; }
     const candidates = sourceLines
       .filter((line) => line && !line.startsWith("#"))
       .map((line) => absoluteUrl(line, sourceUrl))
-      .filter((line) => validMasterFeatureSource(line));
+      .filter((line) => isAllowedNativeDonorUrl(line));
     if (candidates.length !== 1) {
       fail(502, "Unexpected subtitle playlist shape");
       return;
     }
+    const featureRangeBytesByFilename = {"P1485810495_A6804923769_en_subtitles_V1-.webvtt":134977,"P1485810495_A6804923769_en_subtitles_V2-.webvtt":162284};
     const featureUrl = candidates[0];
+    const featureFilename = decodeURIComponent(new URL(featureUrl).pathname.split("/").pop() || "");
+    const expectedFeatureRangeBytes = featureRangeBytesByFilename[featureFilename];
+    if (!Object.prototype.hasOwnProperty.call(featureRangeBytesByFilename, featureFilename)) { fail(502, "Unverified feature filename"); return; }
+    const ranges = sourceLines.filter(line => line.startsWith("#EXT-X-BYTERANGE:"));
+    const rangeMatch = ranges.length === 1 ? /^#EXT-X-BYTERANGE:(\d+)@0$/.exec(ranges[0]) : null;
+    if (ranges.length && (ranges.length !== 1 || !rangeMatch || Number(rangeMatch[1]) !== expectedFeatureRangeBytes || absoluteUrl(sourceLines[sourceLines.indexOf(ranges[0]) + 1], sourceUrl) !== featureUrl)) { fail(502, "Unverified subtitle byte range"); return; }
     const output = [];
     let replaced = 0;
     for (const line of sourceLines) {

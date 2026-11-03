@@ -23,7 +23,7 @@ function nativePlaybackUrl(value) {
 function absoluteUrl(value, baseUrl) {
   value = nativePlaybackUrl(value);
   baseUrl = nativePlaybackUrl(baseUrl);
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
   const originMatch = baseUrl.match(/^(https?:\/\/[^/]+)/i);
   if (!originMatch) return value;
   if (value.startsWith("/")) return originMatch[1] + value;
@@ -39,123 +39,80 @@ function absoluteUrl(value, baseUrl) {
   return originMatch[1] + "/" + normalized.join("/");
 }
 
-function hasQueryFlag(value, key) {
-  const query = String(value || "").split("?")[1]?.split("#")[0] || "";
-  return query.split("&").some((part) => part === key + "=1");
+function isAllowedNativeDonorUrl(value) {
+  try {
+    const match = String(value || "").match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
+    if (!match || ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].indexOf(match[1].toLowerCase()) < 0) return false;
+    const filename = decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1));
+    return ["P1467244084_A6793693246_es-419_subtitles_V1-.webvtt","P1467244084_A6793693246_es-419_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
+  } catch (_) { return false; }
 }
-
-function addQueryFlag(value, key) {
-  if (hasQueryFlag(value, key)) return value;
-  const parts = String(value || "").split("#");
-  return parts[0] + (parts[0].includes("?") ? "&" : "?") + key + "=1" + (parts.length > 1 ? "#" + parts.slice(1).join("#") : "");
-}
-
-function removeQueryFlag(value, key) {
-  const parts = String(value || "").split("#");
-  const queryParts = parts[0].split("?");
-  if (queryParts.length < 2) return value;
-  const kept = queryParts.slice(1).join("?").split("&").filter((part) => part !== key + "=1");
-  return queryParts[0] + (kept.length ? "?" + kept.join("&") : "") + (parts.length > 1 ? "#" + parts.slice(1).join("#") : "");
-}
-
 function upstreamHeaders() {
   const output = {};
   const headers = $request.headers || {};
   for (const key of Object.keys(headers)) {
-    if (/^(?:host|content-length|accept-encoding)$/i.test(key)) continue;
+    if (/^(?:host|content-length|accept-encoding|range)$/i.test(key)) continue;
     output[key] = headers[key];
   }
   return output;
 }
 
 function fail(status, message) {
-  __qxDone({ response: {
-    status,
-    headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
-    body: message,
-  } });
+  __qxDone({ response: { status, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" }, body: message } });
 }
 
 const movieAssetId = "6793693246";
 const movieSlug = "2016-arrival";
-const markerKey = "arrivalzh";
-const vttUrl = "https://hls-amt.itunes.apple.com/__apple_movie_zh/" + movieSlug + "/full.webvtt?bridge=v15";
-
-function rewriteOriginal(playlistBody, sourceUrl) {
-  let captured = null;
-  const __originalRequest = { url: addQueryFlag(sourceUrl, markerKey) };
-  const __originalResponse = { body: playlistBody };
-  function __captureDone(value) { captured = value; }
-  const assetId = "6793693246";
-  const resource = "P1467244084_A6793693246";
-  const url = __originalRequest.url || "";
-  const body = __originalResponse.body || "";
-  const marked = /[?&]arrivalzh=1(?:&|$)/.test(url);
-  const target = new RegExp("(?:[?&](?:mainAssetAdamId|a)=" + assetId + "(?:[&#]|$)|_A" + assetId + "_)").test(url);
-  if (!marked || !target || !body.startsWith("#EXTM3U")) {
-    __captureDone({});
-  } else {
-    const lines = body.split(/\r?\n/);
-    const leaves = lines.filter((line) => line.includes(resource) && /_es-419_subtitles_V2-[^\s?]*\.webvtt/.test(line));
-    if (leaves.length !== 1 || lines.some((line) => /(?:pre|post|empty)/i.test(line) && line.includes(resource))) {
-      __captureDone({});
-    } else {
-      const rewritten = lines.map((line) => {
-        if (!line.includes(resource) || !/_es-419_subtitles_V2-[^\s?]*\.webvtt/.test(line) || /[?&]arrivalzh=1(?:&|$)/.test(line)) return line;
-        return `${line}${line.includes("?") ? "&" : "?"}arrivalzh=1`;
-      }).join(body.includes("\r\n") ? "\r\n" : "\n");
-      __captureDone({ body: rewritten });
-    }
-  }
-  
-  return captured && typeof captured.body === "string" ? captured.body : null;
-}
-
-function routePlaylist(data, sourceUrl) {
-  const rewritten = rewriteOriginal(data, sourceUrl);
-  if (!rewritten) return null;
-  let replaced = 0;
-  const separator = rewritten.includes("\r\n") ? "\r\n" : "\n";
-  const output = [];
-  for (const line of rewritten.split(/\r?\n/)) {
-    if (!line) {
-      output.push(line);
-      continue;
-    }
-    if (!line.startsWith("#")) {
-      const absolute = absoluteUrl(line, sourceUrl);
-      if (hasQueryFlag(absolute, markerKey)) {
-        replaced += 1;
-        if (output.length && output[output.length - 1].startsWith("#EXT-X-BYTERANGE:")) output.pop();
-        output.push(vttUrl);
-      } else {
-        output.push(absolute);
-      }
-      continue;
-    }
-    output.push(line.replace(/([A-Z0-9-]*URI)="([^"]+)"/g, (_, name, value) => name + '="' + absoluteUrl(value, sourceUrl) + '"'));
-  }
-  return replaced === 1 ? output.join(separator) : null;
-}
-
+const vttBridgeBase = "https://hls-amt.itunes.apple.com/__apple_movie_zh/" + movieSlug + "/full.webvtt?rev=v260904a&src=";
 const sourceUrl = nativePlaybackUrl(queryValue($request.url, "src"));
-if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.includes(movieAssetId)) {
+if (queryValue($request.url, "rev") !== "v260904a" || !/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\//i.test(sourceUrl) || !sourceUrl.split('?')[0].endsWith("/WebObjects/MZPlayLocal.woa/hls/subscription/stream/playlist.m3u8") || (queryValue(sourceUrl, "mainAssetAdamId") || queryValue(sourceUrl, "a")) !== movieAssetId) {
   fail(400, "Invalid subtitle playlist source");
 } else {
   $httpClient.get({ url: sourceUrl, headers: upstreamHeaders(), timeout: 10000 }, (error, response, data) => {
-    if (error || !response || Number(response.status) !== 200 || typeof data !== "string" || !data.includes("#EXTM3U")) {
+    if (error || !response || Number(response.status) !== 200 || typeof data !== "string" || !data.startsWith("#EXTM3U")) {
       fail(response ? Number(response.status) || 502 : 502, error || "Subtitle playlist fetch failed");
       return;
     }
-    const body = routePlaylist(data, sourceUrl);
-    if (!body) {
+    const sourceLines = data.replace(/\r/g, "").split("\n");
+    if (!sourceLines.includes("#EXT-X-ENDLIST") || sourceLines.some(line => line.startsWith("#EXT-X-MAP:"))) { fail(502, "Unsupported subtitle transport"); return; }
+    const candidates = sourceLines
+      .filter((line) => line && !line.startsWith("#"))
+      .map((line) => absoluteUrl(line, sourceUrl))
+      .filter((line) => isAllowedNativeDonorUrl(line));
+    if (candidates.length !== 1) {
       fail(502, "Unexpected subtitle playlist shape");
       return;
     }
+    const featureRangeBytesByFilename = {"P1467244084_A6793693246_es-419_subtitles_V1-.webvtt":134827,"P1467244084_A6793693246_es-419_subtitles_V2-.webvtt":139019};
+    const featureUrl = candidates[0];
+    const featureFilename = decodeURIComponent(featureUrl.split("?")[0].split("/").pop() || "");
+    const expectedFeatureRangeBytes = featureRangeBytesByFilename[featureFilename];
+    if (!Object.prototype.hasOwnProperty.call(featureRangeBytesByFilename, featureFilename)) { fail(502, "Unverified feature filename"); return; }
+    const ranges = sourceLines.filter(line => line.startsWith("#EXT-X-BYTERANGE:"));
+    const rangeMatch = ranges.length === 1 ? /^#EXT-X-BYTERANGE:(\d+)@0$/.exec(ranges[0]) : null;
+    if (ranges.length && (ranges.length !== 1 || !rangeMatch || Number(rangeMatch[1]) !== expectedFeatureRangeBytes || absoluteUrl(sourceLines[sourceLines.indexOf(ranges[0]) + 1], sourceUrl) !== featureUrl)) { fail(502, "Unverified subtitle byte range"); return; }
+    const output = [];
+    let replaced = 0;
+    for (const line of sourceLines) {
+      if (!line) { output.push(line); continue; }
+      if (!line.startsWith("#")) {
+        const absolute = absoluteUrl(line, sourceUrl);
+        if (absolute === featureUrl) {
+          replaced += 1;
+          if (output.length && output[output.length - 1].startsWith("#EXT-X-BYTERANGE:")) output.pop();
+          output.push(vttBridgeBase + encodeURIComponent(featureUrl));
+        } else {
+          output.push(absolute);
+        }
+        continue;
+      }
+      output.push(line.replace(/([A-Z0-9-]*URI)="([^"]+)"/g, (_, name, value) => name + '="' + absoluteUrl(value, sourceUrl) + '"'));
+    }
+    if (replaced !== 1) { fail(502, "Feature subtitle replacement failed"); return; }
     __qxDone({ response: {
       status: 200,
-      headers: { "Content-Type": "application/vnd.apple.mpegurl", "Cache-Control": "no-store" },
-      body,
+      headers: { "Content-Type": "application/vnd.apple.mpegurl", "Cache-Control": "no-store, max-age=0", "Pragma": "no-cache", "Expires": "0" },
+      body: output.join("\n"),
     } });
   });
 }
