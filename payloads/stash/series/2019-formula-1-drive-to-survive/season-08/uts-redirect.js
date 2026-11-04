@@ -231,19 +231,14 @@ function shelfBridgeUrl(value) {
   return shelfTargets[asset] ? "https://hls-amt.itunes.apple.com/__apple_movie_master/" + shelfTargets[asset] + "/index.m3u8?rev=" + shelfRevisions[asset] + "&src=" + encodeURIComponent(source) : null;
 }
 
-function beautifulMindBridgeUrl(value) {
-  const source = nativePlaybackUrl(value);
-  const match = source.match(/^https:\/\/(play(?:-edge)?\.itunes\.apple\.com)(\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8)(?:\?[^#]*)?$/i);
-  if (!match || queryValue(source, "a") !== "6796433608") return null;
-  return "https://hls-amt.itunes.apple.com/__apple_movie_master/2001-a-beautiful-mind/index.m3u8?rev=v260925a&src=" + encodeURIComponent(source);
-}
+
 
 function rewriteHlsUrl(value) {
   if (typeof value !== "string") return value;
   const shelf = shelfBridgeUrl(value);
   if (shelf) return shelf;
-  const beautifulMind = beautifulMindBridgeUrl(value);
-  if (beautifulMind) return beautifulMind;
+  
+  
   const series = seriesBridgeUrl(value);
   if (series) return series;
   const f1 = f1BridgeUrl(value);
