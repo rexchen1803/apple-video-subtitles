@@ -222,8 +222,8 @@ function seriesBridgeUrl(value) {
   return null;
 }
 
-const shelfTargets = {"6822052354":"1995-12-monkeys","6820735971":"1993-dave","6822050128":"2014-interstellar","6822053507":"1994-pulp-fiction","6822048451":"1994-forrest-gump","6822054779":"2016-the-nice-guys","6822072736":"2002-minority-report","6820730686":"1995-bad-boys","6822050541":"2013-prisoners","6822054364":"2008-rachel-getting-married","6822101531":"1989-dead-poets-society","6822048777":"2008-get-smart","6822054977":"2006-talladega-nights","6822050093":"2009-julie-and-julia","6820740030":"1988-big","6820731539":"1995-clueless","6824697268":"2004-anchorman","6822040006":"2010-eat-pray-love","6820740767":"2008-body-of-lies"};
-const shelfRevisions = {"6822052354":"nov1103-af0ce1150f0c","6820735971":"nov1103-e0c60e7390f7","6822050128":"nov1103-6fc55b7e640e","6822053507":"nov1103-8fd5be969c2b","6822048451":"nov1103-f8230d9bb2f5","6822054779":"nov1103-88e1f9dbab3b","6822072736":"nov1103-69640299476e","6820730686":"nov1103-6ef1d79f94db","6822050541":"nov1103-6daa17ad6475","6822054364":"nov1103-cedd5982069e","6822101531":"nov1103-74a882e2b88d","6822048777":"nov1103-247c33b4a2e1","6822054977":"nov1103-2bcdd526499b","6822050093":"nov1103-4727ffd19d96","6820740030":"nov1103-7376a389d1f6","6820731539":"nov1103-0b7da4b5ad97","6824697268":"nov1103-a1bc6bcda5e8","6822040006":"nov1103-0a760bc619f6","6820740767":"nov1103-2e1ab7dbca31"};
+const shelfTargets = {};
+const shelfRevisions = {};
 function shelfBridgeUrl(value) {
   const source = nativePlaybackUrl(value);
   if (!/^https:\/\/play(?:-edge)?\.itunes\.apple\.com\/WebObjects\/MZPlayLocal\.woa\/hls\/subscription\/playlist\.m3u8(?:\?[^#]*)?$/i.test(source)) return null;
