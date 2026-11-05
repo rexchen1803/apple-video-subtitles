@@ -3,8 +3,19 @@
   <source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/hero-mobile-dark.svg">
   <source media="(max-width: 1279px)" srcset="assets/readme/hero-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/hero-dark.svg">
-  <img src="assets/readme/hero.svg" alt="Apple Video Subtitles — 为 Apple TV F1 和影视内容提供中文字幕 · Stash · Shadowrocket · Quantumult X · Surge">
+  <img src="assets/readme/hero.svg" alt="Apple Video Subtitles — 为 Apple TV F1 和经典电影提供中文字幕 · Stash · Shadowrocket · Quantumult X · Surge">
 </picture>
+</p>
+
+<p align="center">
+<a href="https://apps.apple.com/us/app/dnspeed/id6810977106" title="了解 DNSpeed">
+<picture>
+  <source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/dnspeed-banner-mobile-dark.svg">
+  <source media="(max-width: 1279px)" srcset="assets/readme/dnspeed-banner-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/dnspeed-banner-dark.svg">
+  <img src="assets/readme/dnspeed-banner.svg" alt="DNSpeed · 现已发布 · 告别 Apple TV 直连卡顿 观影无阻 · 解锁 F1 直播免流 大幅节省代理消耗">
+</picture>
+</a>
 </p>
 
 <p align="center"><img src="assets/readme/divider.svg" alt=""></p>
@@ -19,21 +30,7 @@
 </p>
 
 <p align="center">
-<picture>
-  <source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/content-mobile-dark.svg">
-  <source media="(max-width: 1279px)" srcset="assets/readme/content-mobile.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/content-dark.svg">
-  <img src="assets/readme/content.svg" alt="Formula 1 2026 赛季正赛回放，澳大利亚至墨西哥站正赛回放，共 18 站；Apple TV 美区会员电影 21 部（11月新增的 Apple TV 美区会员订阅电影合集），代表影片《星际穿越》《低俗小说》《阿甘正传》">
-</picture>
-</p>
-
-<p align="center">
-<picture>
-  <source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/dts-mobile-dark.svg">
-  <source media="(max-width: 1279px)" srcset="assets/readme/dts-mobile.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/dts-dark.svg">
-  <img src="assets/readme/dts.svg" alt="Formula 1: Drive to Survive · 极速求生 · 第 8 季">
-</picture>
+<a href="https://www.xiaohongshu.com/explore/6adcb90e000000002c012bc6?xsec_token=ABu1J6OT5gks2uuoViYBbaU0MLs_bbMllNuaAx9rTjpo8=&amp;xsec_source=pc_search" title="点击查看实机播放效果"><picture><source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/content-f1-mobile-dark.svg"><source media="(max-width: 1279px)" srcset="assets/readme/content-f1-mobile.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/readme/content-f1-dark.svg"><img src="assets/readme/content-f1.svg" alt="Apple TV F1 正赛回放 · 点击查看实机播放效果"></picture></a><a href="https://www.xiaohongshu.com/explore/6ae9f7ec00000000030066fe?xsec_token=ABoB_t5zavPzsRDsfnqCvZDMVGuzU65QAqOs3HzTqIaQA=&amp;xsec_source=pc_search" title="点击查看实机播放效果"><picture><source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/content-movie-mobile-dark.svg"><source media="(max-width: 1279px)" srcset="assets/readme/content-movie-mobile.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/readme/content-movie-dark.svg"><img src="assets/readme/content-movie.svg" alt="Apple TV 经典电影 · 21 部 · 点击查看实机播放效果"></picture></a>
 </p>
 
 <p align="center"><img src="assets/readme/divider.svg" alt=""></p>
