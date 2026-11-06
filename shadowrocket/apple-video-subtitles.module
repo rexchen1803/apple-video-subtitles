@@ -1,5 +1,5 @@
 #!name=Apple TV 中文字幕
-#!desc=v261105a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+#!desc=v261106a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 [URL Rewrite]
 ^https?:\/\/play-cdn\.itunes\.apple\.com https://play.itunes.apple.com header
