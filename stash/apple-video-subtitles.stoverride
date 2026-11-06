@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261105a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261106a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -318,11 +318,6 @@ http:
       type: request
       require-body: false
       timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/(?:australia|china|japan|miami|canada|monaco|barcelona-catalunya|austria|great-britain|belgium|hungary|netherlands|spain|azerbaijan|bahrain-malaysia|singapore)\/seg-\d{3}\.webvtt(?:\?.*)?$'
-      name: f1-race-commentary-zh
-      type: request
-      require-body: false
-      timeout: 30
     - match: '^https?:\/\/hls-amt\.itunes\.apple\.com\/itunes-assets\/HLSSportsVodVideo\d+\/v4\/(?:[^\/]+\/)+(?:P1337486392_A1881724926|P1337522687_A1881777941|P1326620577_A1881763666|P1364568578_A1881733891|P1392837560_A1881753363|P1411825097_A1881742204|P1413846083_A1881690171|P1429344944_A1882150267|P1436852938_A1881739464|P1457248952_A1881786635)_es_subtitles_V2-\d+\.webvtt(?:\?.*)?$'
       name: f1-race-commentary-fan-zh
       type: response
@@ -514,6 +509,86 @@ http:
       type: request
       require-body: false
       timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/australia\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-australia-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/china\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-china-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/japan\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-japan-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/miami\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-miami-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/canada\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-canada-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/monaco\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-monaco-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/barcelona-catalunya\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-barcelona-catalunya-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/austria\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-austria-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/great-britain\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-great-britain-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/belgium\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-belgium-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/hungary\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-hungary-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/netherlands\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-netherlands-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/spain\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-spain-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/azerbaijan\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-azerbaijan-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/bahrain-malaysia\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-bahrain-malaysia-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh\/singapore\/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-singapore-isolated-zh
+      type: request
+      require-body: false
+      timeout: 30
 
 script-providers:
   apple-tv-playback-host-workaround:
@@ -524,9 +599,6 @@ script-providers:
     interval: 86400
   f1-replay-track-playlist:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_playlist.js
-    interval: 86400
-  f1-race-commentary-zh:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/f1/2026/2026-f1-race-commentary-zh.js
     interval: 86400
   f1-race-commentary-fan-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/f1/2026/2026-f1-race-commentary-fan-zh.js
@@ -809,4 +881,52 @@ script-providers:
     interval: 86400
   f1-preview-mx-vtt:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/f1/previews/2026/19-mexico/vtt.js
+    interval: 86400
+  f1-australia-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/01-australia-isolated.js
+    interval: 86400
+  f1-china-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/02-china-isolated.js
+    interval: 86400
+  f1-japan-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/03-japan-isolated.js
+    interval: 86400
+  f1-miami-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/04-miami-isolated.js
+    interval: 86400
+  f1-canada-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/05-canada-isolated.js
+    interval: 86400
+  f1-monaco-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/06-monaco-isolated.js
+    interval: 86400
+  f1-barcelona-catalunya-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/07-barcelona-catalunya-isolated.js
+    interval: 86400
+  f1-austria-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/08-austria-isolated.js
+    interval: 86400
+  f1-great-britain-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/09-great-britain-isolated.js
+    interval: 86400
+  f1-belgium-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/10-belgium-isolated.js
+    interval: 86400
+  f1-hungary-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/11-hungary-isolated.js
+    interval: 86400
+  f1-netherlands-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/12-netherlands-isolated.js
+    interval: 86400
+  f1-spain-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/13-spain-isolated.js
+    interval: 86400
+  f1-azerbaijan-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/15-azerbaijan-isolated.js
+    interval: 86400
+  f1-bahrain-malaysia-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/16-bahrain-malaysia-isolated.js
+    interval: 86400
+  f1-singapore-isolated-zh:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/17-singapore-isolated.js
     interval: 86400
