@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261106a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261107a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -479,21 +479,6 @@ http:
       require-body: true
       timeout: 30
       max-size: 2097152
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_us_live_preview\/master\.m3u8(?:\?.*)?$'
-      name: f1-preview-us-master
-      type: request
-      require-body: false
-      timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_us_live_preview\/zh-Hans\/index\.m3u8(?:\?.*)?$'
-      name: f1-preview-us-playlist
-      type: request
-      require-body: false
-      timeout: 30
-    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_us_live_preview\/zh-Hans\/seg-\d{3}\.vtt(?:\?.*)?$'
-      name: f1-preview-us-vtt
-      type: request
-      require-body: false
-      timeout: 30
     - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_mx_live_preview\/master\.m3u8(?:\?.*)?$'
       name: f1-preview-mx-master
       type: request
@@ -589,16 +574,31 @@ http:
       type: request
       require-body: false
       timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_master/united-states/index\.m3u8(?:\?.*)?$'
+      name: f1-replay-us-formal-master
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh/united-states/index\.m3u8(?:\?.*)?$'
+      name: f1-replay-us-formal-playlist
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_replay_zh/united-states/seg-\d{3}\.webvtt(?:\?.*)?$'
+      name: f1-replay-us-formal-vtt
+      type: request
+      require-body: false
+      timeout: 30
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
     interval: 86400
   f1-replay-track-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_master.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/runtime/f1/replay_track_master.js
     interval: 86400
   f1-replay-track-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/2cb9e0f6a452c1df371df0dff446514540a379ab/payloads/stash/runtime/f1/replay_track_playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/runtime/f1/replay_track_playlist.js
     interval: 86400
   f1-race-commentary-fan-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/9e7aa43bd9e1a4032d4bc780c353f8f4a6ef31bb/payloads/stash/f1/2026/2026-f1-race-commentary-fan-zh.js
@@ -864,15 +864,6 @@ script-providers:
   movie-2008-body-of-lies-vtt:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2008-body-of-lies/subtitle.js
     interval: 86400
-  f1-preview-us-master:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/f1/previews/2026/18-united-states/master.js
-    interval: 86400
-  f1-preview-us-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/f1/previews/2026/18-united-states/playlist.js
-    interval: 86400
-  f1-preview-us-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/f1/previews/2026/18-united-states/vtt.js
-    interval: 86400
   f1-preview-mx-master:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/08afb047c1fd259451cac81920d9d9a6fe7792ce/payloads/stash/f1/previews/2026/19-mexico/master.js
     interval: 86400
@@ -929,4 +920,13 @@ script-providers:
     interval: 86400
   f1-singapore-isolated-zh:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5d999c2b8c5fb0775e3383519bd5c17dafe6fc2b/payloads/stash/f1/2026/17-singapore-isolated.js
+    interval: 86400
+  f1-replay-us-formal-master:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/runtime/f1/replay_track_master.js
+    interval: 86400
+  f1-replay-us-formal-playlist:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/runtime/f1/replay_track_playlist.js
+    interval: 86400
+  f1-replay-us-formal-vtt:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/f1/2026/18-united-states-isolated.js
     interval: 86400
