@@ -39,34 +39,7 @@ const URL = class {
 
 // Surge request script for exact F1 replay synthetic masters. Native
 // video/audio/subtitle resources remain on their original Apple hosts.
-const replayConfigs = {
-  australia: {
-    programId: "1337486392",
-    assetId: "1881724926",
-    revision: "f1aur22m1",
-    stableRenditionId: "australia-2026-r22-zh-hans-m1",
-  },
-  china: {
-    programId: "1337522687",
-    assetId: "1881777941",
-    revision: "f1cnr21m2",
-    stableRenditionId: "china-2026-r21-zh-hans-m2",
-  },
-  japan: { programId: "1326620577", assetId: "1881763666", revision: "f1jpr20m1", stableRenditionId: "japan-2026-r20-zh-hans-m1" },
-  miami: { programId: "1364568578", assetId: "1881733891", revision: "f1mir20m1", stableRenditionId: "miami-2026-r20-zh-hans-m1" },
-  canada: { programId: "1392837560", assetId: "1881753363", revision: "f1car20m1", stableRenditionId: "canada-2026-r20-zh-hans-m1" },
-  monaco: { programId: "1411825097", assetId: "1881742204", revision: "f1mcr25m1", stableRenditionId: "monaco-2026-r25-zh-hans-m1" },
-  "barcelona-catalunya": { programId: "1413846083", assetId: "1881690171", revision: "f1bar17m1", stableRenditionId: "barcelona-catalunya-2026-r17-zh-hans-m1" },
-  austria: { programId: "1429344944", assetId: "1882150267", revision: "f1atr22m1", stableRenditionId: "austria-2026-r22-zh-hans-m1" },
-  "great-britain": { programId: "1436852938", assetId: "1881739464", revision: "f1gbr26m1", stableRenditionId: "great-britain-2026-r26-zh-hans-m1" },
-  belgium: { programId: "1457248952", assetId: "1881786635", revision: "f1ber12m1", stableRenditionId: "belgium-2026-r12-zh-hans-m1" },
-  hungary: { programId: "1461869625", assetId: "1881700068", revision: "f1hur32m1", stableRenditionId: "hungary-2026-r32-zh-hans-m1" },
-  netherlands: { programId: "1478680801", assetId: "1882152939", revision: "f1ntr23m1", stableRenditionId: "netherlands-2026-r23-zh-hans-m1" },
-  spain: { programId: "1497835498", assetId: "1881721455", revision: "f1spr22m1", stableRenditionId: "spain-2026-r22-zh-hans-m1" },
-  azerbaijan: { programId: "1509835184", assetId: "1882094604", revision: "azr1-76f792623176", stableRenditionId: "azerbaijan-2026-r1-76f792623176" },
-  "bahrain-malaysia": { programId: "1526866852", programIds: ["1526866852", "1529375473"], assetId: "6819360836", revision: "bhm1-57ce7a36cff3", stableRenditionId: "bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3" },
-  singapore: {"programId":"1525529454","assetId":"1881782888","revision":"20261024r7","stableRenditionId":"sg-zh-Hans-20261024r7"},
-};
+const replayConfigs = {"australia":{"programId":"1337486392","assetId":"1881724926","revision":"f1aur22m1","stableRenditionId":"australia-2026-r22-zh-hans-m1"},"china":{"programId":"1337522687","assetId":"1881777941","revision":"f1cnr21m2","stableRenditionId":"china-2026-r21-zh-hans-m2"},"japan":{"programId":"1326620577","assetId":"1881763666","revision":"f1jpr20m1","stableRenditionId":"japan-2026-r20-zh-hans-m1"},"miami":{"programId":"1364568578","assetId":"1881733891","revision":"f1mir20m1","stableRenditionId":"miami-2026-r20-zh-hans-m1"},"canada":{"programId":"1392837560","assetId":"1881753363","revision":"f1car20m1","stableRenditionId":"canada-2026-r20-zh-hans-m1"},"monaco":{"programId":"1411825097","assetId":"1881742204","revision":"f1mcr25m1","stableRenditionId":"monaco-2026-r25-zh-hans-m1"},"barcelona-catalunya":{"programId":"1413846083","assetId":"1881690171","revision":"f1bar17m1","stableRenditionId":"barcelona-catalunya-2026-r17-zh-hans-m1"},"austria":{"programId":"1429344944","assetId":"1882150267","revision":"f1atr22m1","stableRenditionId":"austria-2026-r22-zh-hans-m1"},"great-britain":{"programId":"1436852938","assetId":"1881739464","revision":"f1gbr26m1","stableRenditionId":"great-britain-2026-r26-zh-hans-m1"},"belgium":{"programId":"1457248952","assetId":"1881786635","revision":"f1ber12m1","stableRenditionId":"belgium-2026-r12-zh-hans-m1"},"hungary":{"programId":"1461869625","assetId":"1881700068","revision":"f1hur32m1","stableRenditionId":"hungary-2026-r32-zh-hans-m1"},"netherlands":{"programId":"1478680801","assetId":"1882152939","revision":"f1ntr23m1","stableRenditionId":"netherlands-2026-r23-zh-hans-m1"},"spain":{"programId":"1497835498","assetId":"1881721455","revision":"f1spr22m1","stableRenditionId":"spain-2026-r22-zh-hans-m1"},"azerbaijan":{"programId":"1509835184","assetId":"1882094604","revision":"azr1-76f792623176","stableRenditionId":"azerbaijan-2026-r1-76f792623176"},"bahrain-malaysia":{"programId":"1526866852","programIds":["1526866852","1529375473"],"assetId":"6819360836","revision":"bhm1-57ce7a36cff3","stableRenditionId":"bahrain-malaysia-2026-r1-zh-hans-57ce7a36cff3"},"singapore":{"programId":"1525529454","assetId":"1881782888","revision":"20261024r7","stableRenditionId":"sg-zh-Hans-20261024r7"},"united-states":{"programId":"1536601273","assetId":"1881678292","revision":"20261107r6","stableRenditionId":"us-2026-zh-standard-r6"}};
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
 

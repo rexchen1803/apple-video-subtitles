@@ -1,23 +1,6 @@
 // Surge request script for exact Chinese sidecar playlists. Synthetic VTT
 // segments are mapped by playlist ordinal to each SHA-bound candidate.
-const replayConfigs = {
-  australia: { eventId: "P1337486392_A1881724926", programId: "1337486392", assetId: "1881724926", expectedSegments: 210 },
-  china: { eventId: "P1337522687_A1881777941", programId: "1337522687", assetId: "1881777941", expectedSegments: 226 },
-  japan: { eventId: "P1326620577_A1881763666", programId: "1326620577", assetId: "1881763666", expectedSegments: 229 },
-  miami: { eventId: "P1364568578_A1881733891", programId: "1364568578", assetId: "1881733891", expectedSegments: 224 },
-  canada: { eventId: "P1392837560_A1881753363", programId: "1392837560", assetId: "1881753363", expectedSegments: 223 },
-  monaco: { eventId: "P1411825097_A1881742204", programId: "1411825097", assetId: "1881742204", expectedSegments: 268 },
-  "barcelona-catalunya": { eventId: "P1413846083_A1881690171", programId: "1413846083", assetId: "1881690171", expectedSegments: 219 },
-  austria: { eventId: "P1429344944_A1882150267", programId: "1429344944", assetId: "1882150267", expectedSegments: 213 },
-  "great-britain": { eventId: "P1436852938_A1881739464", programId: "1436852938", assetId: "1881739464", expectedSegments: 220 },
-  belgium: { eventId: "P1457248952_A1881786635", programId: "1457248952", assetId: "1881786635", expectedSegments: 207 },
-  hungary: { eventId: "P1461869625_A1881700068", programId: "1461869625", assetId: "1881700068", expectedSegments: 228 },
-  netherlands: { eventId: "P1478680801_A1882152939", programId: "1478680801", assetId: "1882152939", expectedSegments: 254 },
-  spain: { eventId: "P1497835498_A1881721455", programId: "1497835498", assetId: "1881721455", expectedSegments: 227 },
-  azerbaijan: { eventId: "P1509835184_A1882094604", programId: "1509835184", assetId: "1882094604", expectedSegments: 225, revision: "azr1-76f792623176" },
-  "bahrain-malaysia": { eventId: "P1526866852_A6819360836", programId: "1526866852", programIds: ["1526866852", "1529375473"], assetId: "6819360836", subtitleTracks: { "1526866852": "en_subtitles_V2", "1529375473": "en_subtitles_V1" }, expectedSegments: 323, revision: "bhm1-57ce7a36cff3" },
-  singapore: {"eventId":"P1525529454_A1881782888","programId":"1525529454","assetId":"1881782888","expectedSegments":229},
-};
+const replayConfigs = {"australia":{"eventId":"P1337486392_A1881724926","programId":"1337486392","assetId":"1881724926","expectedSegments":210},"china":{"eventId":"P1337522687_A1881777941","programId":"1337522687","assetId":"1881777941","expectedSegments":226},"japan":{"eventId":"P1326620577_A1881763666","programId":"1326620577","assetId":"1881763666","expectedSegments":229},"miami":{"eventId":"P1364568578_A1881733891","programId":"1364568578","assetId":"1881733891","expectedSegments":224},"canada":{"eventId":"P1392837560_A1881753363","programId":"1392837560","assetId":"1881753363","expectedSegments":223},"monaco":{"eventId":"P1411825097_A1881742204","programId":"1411825097","assetId":"1881742204","expectedSegments":268},"barcelona-catalunya":{"eventId":"P1413846083_A1881690171","programId":"1413846083","assetId":"1881690171","expectedSegments":219},"austria":{"eventId":"P1429344944_A1882150267","programId":"1429344944","assetId":"1882150267","expectedSegments":213},"great-britain":{"eventId":"P1436852938_A1881739464","programId":"1436852938","assetId":"1881739464","expectedSegments":220},"belgium":{"eventId":"P1457248952_A1881786635","programId":"1457248952","assetId":"1881786635","expectedSegments":207},"hungary":{"eventId":"P1461869625_A1881700068","programId":"1461869625","assetId":"1881700068","expectedSegments":228},"netherlands":{"eventId":"P1478680801_A1882152939","programId":"1478680801","assetId":"1882152939","expectedSegments":254},"spain":{"eventId":"P1497835498_A1881721455","programId":"1497835498","assetId":"1881721455","expectedSegments":227},"azerbaijan":{"eventId":"P1509835184_A1882094604","programId":"1509835184","assetId":"1882094604","expectedSegments":225,"revision":"azr1-76f792623176"},"bahrain-malaysia":{"eventId":"P1526866852_A6819360836","programId":"1526866852","programIds":["1526866852","1529375473"],"assetId":"6819360836","subtitleTracks":{"1526866852":"en_subtitles_V2","1529375473":"en_subtitles_V1"},"expectedSegments":323,"revision":"bhm1-57ce7a36cff3"},"singapore":{"eventId":"P1525529454_A1881782888","programId":"1525529454","assetId":"1881782888","expectedSegments":229},"united-states":{"eventId":"P1536601273_A1881678292","programId":"1536601273","assetId":"1881678292","expectedSegments":230,"revision":"20261107r6"}};
 
 const replaySlugPattern = Object.keys(replayConfigs).join("|");
 
