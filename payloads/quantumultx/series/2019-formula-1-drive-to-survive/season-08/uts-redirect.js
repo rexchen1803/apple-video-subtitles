@@ -1,4 +1,4 @@
-const replayConfigs = [{"station":"19-mexico","referenceId":"umc.cmr.f1live.sp.44pxqond8524r9rdavtv5frb0","revision":"f1pv261104a-mx","aliases":["mx20261104a","mx20261104b","mx20261104c"],"masterPath":"/__f1_mx_live_preview/master.m3u8"}];
+const replayConfigs = [{"station":"19-mexico","referenceId":"umc.cmr.f1live.sp.44pxqond8524r9rdavtv5frb0","revision":"f1pv261104a-mx","aliases":["mx20261104a","mx20261104b","mx20261104c"],"masterPath":"/__f1_mx_live_preview/master.m3u8"},{"station":"20-sao-paulo","referenceId":"umc.cmr.f1live.sp.4u929zfqzsx24g94h48fc52os","revision":"sp20261109b","aliases":[],"masterPath":"/__f1_sp_live_preview/master.m3u8"}];
 const f1pvLibrary = (function previewLibrary() {
   function parseUrl(raw) {
     if (typeof raw !== 'string' || /[\s\u0000-\u001f#]/.test(raw)) return null;
