@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261107a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261109a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -589,10 +589,25 @@ http:
       type: request
       require-body: false
       timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_sp_live_preview\/master\.m3u8(?:\?.*)?$'
+      name: F1.Preview.SP.Master.request
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_sp_live_preview\/zh\/index\.m3u8(?:\?.*)?$'
+      name: F1.Preview.SP.Playlist.request
+      type: request
+      require-body: false
+      timeout: 30
+    - match: '^https:\/\/hls-amt\.itunes\.apple\.com\/__f1_sp_live_preview\/zh\/seg-\d{3}\.vtt(?:\?.*)?$'
+      name: F1.Preview.SP.VTT.request
+      type: request
+      require-body: false
+      timeout: 30
 
 script-providers:
   apple-tv-playback-host-workaround:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/63c5b25275144f3a3701add3c830c18882ffd4c2/payloads/stash/series/2019-formula-1-drive-to-survive/season-08/uts-redirect.js
     interval: 86400
   f1-replay-track-master:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/runtime/f1/replay_track_master.js
@@ -929,4 +944,13 @@ script-providers:
     interval: 86400
   f1-replay-us-formal-vtt:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b958fddafa4d75c1534d9e0bb85151c02461c418/payloads/stash/f1/2026/18-united-states-isolated.js
+    interval: 86400
+  F1.Preview.SP.Master.request:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/63c5b25275144f3a3701add3c830c18882ffd4c2/payloads/stash/f1/previews/2026/20-sao-paulo/master.js
+    interval: 86400
+  F1.Preview.SP.Playlist.request:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/63c5b25275144f3a3701add3c830c18882ffd4c2/payloads/stash/f1/previews/2026/20-sao-paulo/playlist.js
+    interval: 86400
+  F1.Preview.SP.VTT.request:
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/63c5b25275144f3a3701add3c830c18882ffd4c2/payloads/stash/f1/previews/2026/20-sao-paulo/vtt.js
     interval: 86400
