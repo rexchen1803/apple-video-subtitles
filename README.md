@@ -1,3 +1,5 @@
+<p align="center"><a href="README.md">简体中文</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.en.md">English</a> · <a href="README.ja.md">日本語</a></p>
+
 <p align="center">
 <picture>
   <source media="(max-width: 1279px) and (prefers-color-scheme: dark)" srcset="assets/readme/hero-mobile-dark.svg">
