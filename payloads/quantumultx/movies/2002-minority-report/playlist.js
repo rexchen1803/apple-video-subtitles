@@ -44,7 +44,7 @@ function isAllowedNativeDonorUrl(value) {
     const match = String(value || "").match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
     if (!match || ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].indexOf(match[1].toLowerCase()) < 0) return false;
     const filename = decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1));
-    return ["P1539579658_A6822072736_es-419_subtitles_V1-.webvtt","P1539579658_A6822072736_es-419_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
+    return ["P1539579658_A6822072736_es-419_subtitles_V1-.webvtt","P1539579658_A6822072736_es-419_subtitles_V2-.webvtt","P1548594118_A6822072736_es-419_subtitles_V2-.webvtt"].indexOf(filename) >= 0;
   } catch (_) { return false; }
 }
 function upstreamHeaders() {
@@ -83,7 +83,7 @@ if (queryValue($request.url, "rev") !== "nov1103-69640299476e" || !/^https:\/\/p
       fail(502, "Unexpected subtitle playlist shape");
       return;
     }
-    const featureRangeBytesByFilename = {"P1539579658_A6822072736_es-419_subtitles_V1-.webvtt":187900,"P1539579658_A6822072736_es-419_subtitles_V2-.webvtt":191806};
+    const featureRangeBytesByFilename = {"P1539579658_A6822072736_es-419_subtitles_V1-.webvtt":187900,"P1539579658_A6822072736_es-419_subtitles_V2-.webvtt":191806,"P1548594118_A6822072736_es-419_subtitles_V2-.webvtt":191806};
     const featureUrl = candidates[0];
     const featureFilename = decodeURIComponent(featureUrl.split("?")[0].split("/").pop() || "");
     const expectedFeatureRangeBytes = featureRangeBytesByFilename[featureFilename];
