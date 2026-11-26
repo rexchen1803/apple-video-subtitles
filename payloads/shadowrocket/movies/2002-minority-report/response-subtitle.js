@@ -2,7 +2,7 @@ const markerKey = "movie2002minorityreportzh";
 function isPreparedFeature(value) {
   try {
     const match = String(value || "").trim().match(/^https:\/\/([^/?#]+)(\/[^?#]*)(?:\?[^#]*)?$/i);
-    return !!match && ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].includes(match[1].toLowerCase()) && ["P1539579658_A6822072736_es-419_subtitles_V1-.webvtt","P1539579658_A6822072736_es-419_subtitles_V2-.webvtt","P1548594118_A6822072736_es-419_subtitles_V2-.webvtt"].includes(decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1)));
+    return !!match && ["vod-ak-aoc.tv.apple.com","vod-ap-aoc.tv.apple.com","vod-fa-aoc.tv.apple.com"].includes(match[1].toLowerCase()) && ["P1539579658_A6822072736_es-419_subtitles_V1-.webvtt","P1539579658_A6822072736_es-419_subtitles_V2-.webvtt","P1548594118_A6822072736_es-419_subtitles_V2-.webvtt","P1563375794_A6822072736_es-419_subtitles_V2-.webvtt"].includes(decodeURIComponent(match[2].slice(match[2].lastIndexOf("/") + 1)));
   } catch (_) { return false; }
 }
 const url = $request.url || "";
