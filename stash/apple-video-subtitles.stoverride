@@ -1,5 +1,5 @@
 name: Apple TV 中文字幕
-desc: v261123a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
+desc: v261126a；Apple TV F1 和影视中文字幕，使用需开启 MitM 并安装、信任证书；GitHub：rexchen1803
 
 http:
   mitm:
@@ -811,10 +811,10 @@ script-providers:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/2002-minority-report/manifest.js
     interval: 86400
   movie-2002-minority-report-playlist:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b14a2fd842d6869ab64e1bd71db6f42319a685f0/payloads/stash/movies/2002-minority-report/playlist.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5082a8bc97ed4a65475ef6f2052b752b965dca1a/payloads/stash/movies/2002-minority-report/playlist.js
     interval: 86400
   movie-2002-minority-report-vtt:
-    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/b14a2fd842d6869ab64e1bd71db6f42319a685f0/payloads/stash/movies/2002-minority-report/subtitle.js
+    url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/5082a8bc97ed4a65475ef6f2052b752b965dca1a/payloads/stash/movies/2002-minority-report/subtitle.js
     interval: 86400
   movie-1995-bad-boys-master:
     url: https://raw.githubusercontent.com/rexchen1803/apple-video-subtitles/a040b1ddf317c10b5bcba97e708bce68b1d2eca7/payloads/stash/movies/1995-bad-boys/manifest.js
